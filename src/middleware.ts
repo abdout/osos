@@ -1,5 +1,3 @@
-import { match } from '@formatjs/intl-localematcher'
-import Negotiator from 'negotiator'
 import { type NextRequest, NextResponse } from 'next/server'
 import { i18n, type Locale } from '@/components/internationalization/config'
 import { auth } from '@/auth'
@@ -11,11 +9,15 @@ function getLocale(request: NextRequest): string {
     return cookieLocale
   }
 
-  const acceptLanguageHeader = request.headers.get('accept-language') ?? ''
-  const headers = { 'accept-language': acceptLanguageHeader }
-  const languages = new Negotiator({ headers }).languages()
+  // Simple Accept-Language parsing for Edge runtime
+  const acceptLanguage = request.headers.get('accept-language') ?? ''
+  const preferredLocale = acceptLanguage.split(',')[0]?.split('-')[0]?.toLowerCase()
 
-  return match(languages, i18n.locales, i18n.defaultLocale)
+  if (preferredLocale && i18n.locales.includes(preferredLocale as Locale)) {
+    return preferredLocale
+  }
+
+  return i18n.defaultLocale
 }
 
 function localizationMiddleware(request: NextRequest): NextResponse | null {
