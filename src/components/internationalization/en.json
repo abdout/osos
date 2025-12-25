@@ -1,6 +1,6 @@
 {
   "common": {
-    "appName": "Mazin",
+    "appName": "Abdout",
     "save": "Save",
     "cancel": "Cancel",
     "delete": "Delete",
@@ -24,6 +24,17 @@
     "success": "Success",
     "error": "Error occurred",
     "warning": "Warning"
+  },
+  "header": {
+    "home": "Home",
+    "features": "Features",
+    "tracking": "Tracking",
+    "solutions": "Solutions",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "faq": "FAQs",
+    "signUp": "Sign Up",
+    "login": "Login"
   },
   "navigation": {
     "dashboard": "Dashboard",
@@ -183,95 +194,174 @@
   },
   "marketing": {
     "hero": {
-      "title": "Fast & Reliable Customs Clearance in Port Sudan",
-      "subtitle": "Streamline your import and export operations with our integrated digital services, real-time tracking, and expert team",
+      "badge": "CUSTOMS CLEARANCE SERVICES",
+      "title": "Precision in Every Shipment",
+      "subtitle": "Streamline your import and export operations with our integrated digital platform, real-time tracking, and expert customs clearance team in Port Sudan.",
       "cta": "Get Started",
-      "contact": "Contact Us"
+      "trackPlaceholder": "Enter tracking number"
     },
-    "stats": {
-      "years": "Years of Experience",
-      "yearsValue": "15+",
-      "shipments": "Shipments Completed",
-      "shipmentsValue": "5,000+",
-      "clients": "Satisfied Clients",
-      "clientsValue": "200+",
-      "clearanceTime": "Clearance Time",
-      "clearanceTimeValue": "48 Hours"
+    "partners": {
+      "title": "Trusted by leading shipping companies"
+    },
+    "testimonial": {
+      "quote": "Abdout transformed how we handle shipments. Real-time tracking and automated alerts have made our operations incredibly smooth and efficient.",
+      "author": "Ahmed Hassan",
+      "role": "Import Manager, Sudan Trading Co."
+    },
+    "solutions": {
+      "badge": "OUR SOLUTIONS",
+      "title": "Logistics Solutions That Move you Forward",
+      "subtitle": "Comprehensive customs clearance and logistics services designed to streamline your operations.",
+      "items": {
+        "realTime": {
+          "title": "Real-Time Tracking",
+          "description": "Monitor your shipments status 24/7 with live updates and notifications."
+        },
+        "analytics": {
+          "title": "Smart Analytics",
+          "description": "Data-driven insights to optimize your supply chain and reduce costs."
+        },
+        "automated": {
+          "title": "Automated Alerts",
+          "description": "Stay informed with instant notifications on shipment milestones."
+        },
+        "multiCarrier": {
+          "title": "Multi-Carrier Support",
+          "description": "Seamless integration with major shipping lines and carriers."
+        },
+        "customs": {
+          "title": "Customs Processing",
+          "description": "Expert handling of all customs documentation and procedures."
+        },
+        "warehouse": {
+          "title": "Warehouse Management",
+          "description": "Secure storage with complete inventory tracking and control."
+        }
+      }
+    },
+    "allInOne": {
+      "badge": "COMPLETE SOLUTION",
+      "title": "All-in-One Freight and Logistics System",
+      "subtitle": "Experience seamless cargo management with our comprehensive platform that handles everything from customs clearance to final delivery.",
+      "features": {
+        "documentation": {
+          "title": "Complete Documentation",
+          "description": "Digital customs docs with secure storage and quick retrieval"
+        },
+        "tracking": {
+          "title": "Real-Time Tracking",
+          "description": "Monitor shipment status with live updates and automated notifications"
+        },
+        "invoicing": {
+          "title": "Multi-Currency Invoicing",
+          "description": "Multi-currency invoicing with automated duty calculations"
+        },
+        "access": {
+          "title": "Team Access Control",
+          "description": "Role-based permissions for secure team collaboration and management"
+        }
+      }
+    },
+    "insights": {
+      "badge": "BLOG",
+      "title": "Latest Insights and Trends",
+      "viewAll": "See more",
+      "articles": {
+        "article1": {
+          "category": "News",
+          "title": "New Customs Regulations for 2025",
+          "description": "New leadership accelerates innovation and growth across regional operations to strengthen market presence.",
+          "date": "July 22, 2025"
+        },
+        "article2": {
+          "category": "News",
+          "title": "Optimizing Your Supply Chain",
+          "description": "New platform policy streamlines operations and ensures service continuity while driving operational excellence.",
+          "date": "July 20, 2025"
+        },
+        "article3": {
+          "category": "News",
+          "title": "Digital Transformation in Logistics",
+          "description": "Revolutionizing Liquid Transport: How Smart SaaS Technology Optimizes Bulk Supply Chain Efficiency and reduces operational costs significantly.",
+          "date": "July 18, 2025"
+        }
+      }
     },
     "services": {
-      "title": "Our Services",
-      "subtitle": "Comprehensive solutions for all your shipping and customs needs",
-      "import": {
-        "title": "Import Clearance",
-        "description": "Complete customs procedures, duty calculations, and goods delivery"
-      },
-      "export": {
-        "title": "Export Clearance",
-        "description": "Licenses and certificates issuance for your export goods"
-      },
-      "warehouse": {
-        "title": "Warehousing",
-        "description": "Secure storage facilities with full inventory management"
-      },
-      "transport": {
-        "title": "Transportation",
-        "description": "Container and cargo delivery to final destination"
+      "badge": "OUR SERVICE",
+      "title": "Logistics Solutions That Move you Forward",
+      "subtitle": "Ensure every delivery is accurate, on time, and fully optimized with intelligent logistics and real-time tracking.",
+      "items": {
+        "sea": {
+          "type": "SEA",
+          "tag1": "Cost-effective",
+          "tag2": "Bulk Transport",
+          "title": "Maritime Shipping",
+          "description": "Optimized sea-based logistics with real-time tracking and seamless coordination."
+        },
+        "air": {
+          "type": "AIR",
+          "tag1": "Global Reach",
+          "tag2": "High Security",
+          "title": "Aerial Cargo",
+          "description": "Fast, secure air logistics powered by intelligent routing and cloud integration."
+        },
+        "ground": {
+          "type": "GROUND",
+          "tag1": "Flexible",
+          "tag2": "Real-time Tracking",
+          "title": "Ground Transport",
+          "description": "Reliable land-based delivery with smart scheduling and route optimization tools."
+        }
       }
     },
-    "process": {
-      "title": "How It Works",
-      "subtitle": "Simple steps to complete your customs clearance",
-      "step1": {
-        "title": "Submit Request",
-        "description": "Send your shipment details and documents via the platform"
-      },
-      "step2": {
-        "title": "Document Processing",
-        "description": "We review and prepare all required paperwork"
-      },
-      "step3": {
-        "title": "Customs Clearance",
-        "description": "We handle all official procedures until clearance"
-      },
-      "step4": {
-        "title": "Delivery",
-        "description": "Your goods delivered ready at the specified location"
+    "faq": {
+      "title": "Questions and Answers",
+      "items": {
+        "q1": {
+          "question": "What is Abdout's primary service area?",
+          "answer": "Abdout specializes in customs clearance services at Port Sudan, handling both import and export operations for businesses across Sudan."
+        },
+        "q2": {
+          "question": "How long does the customs clearance process take?",
+          "answer": "Most shipments are cleared within 48 hours. Complex cases may take longer depending on documentation requirements and customs inspections."
+        },
+        "q3": {
+          "question": "What documents are required for customs clearance?",
+          "answer": "Typically required documents include Bill of Lading, Commercial Invoice, Packing List, Certificate of Origin, and Insurance Certificate. Additional documents may be needed based on the goods type."
+        },
+        "q4": {
+          "question": "Can I track my shipment in real-time?",
+          "answer": "Yes, our platform provides real-time tracking with automated notifications at every milestone, from arrival at port to final delivery."
+        },
+        "q5": {
+          "question": "What payment methods do you accept?",
+          "answer": "We accept payments in Sudanese Pounds (SDG), US Dollars (USD), and Saudi Riyals (SAR). Invoices can be generated in your preferred currency."
+        }
       }
     },
-    "features": {
-      "title": "Platform Features",
-      "subtitle": "Modern technology to manage your operations efficiently",
-      "tracking": {
-        "title": "Real-time Tracking",
-        "description": "Monitor your shipments status moment by moment"
+    "footer": {
+      "description": "Your trusted partner for customs clearance and logistics services in Port Sudan. Fast, reliable, and transparent.",
+      "quickLinks": "Quick Links",
+      "services": "Services",
+      "contact": "Contact",
+      "copyright": "All rights reserved.",
+      "links": {
+        "home": "Home",
+        "features": "Features",
+        "tracking": "Tracking",
+        "solutions": "Solutions",
+        "pricing": "Pricing",
+        "import": "Import Clearance",
+        "export": "Export Clearance",
+        "warehouse": "Warehousing",
+        "transport": "Transportation"
       },
-      "invoicing": {
-        "title": "Multi-currency Invoicing",
-        "description": "Invoices in SDG, USD, and SAR currencies"
-      },
-      "documents": {
-        "title": "Document Management",
-        "description": "Upload and organize all documents electronically"
-      },
-      "access": {
-        "title": "Role-based Access",
-        "description": "Manage your team with different roles and access levels"
+      "contactInfo": {
+        "address": "Port Sudan, Red Sea State, Sudan",
+        "phone": "+249 123 456 789",
+        "email": "info@mazin.sd"
       }
-    },
-    "cta": {
-      "title": "Ready to streamline your operations?",
-      "subtitle": "Join hundreds of clients who trust Mazin to manage their shipments",
-      "button": "Start Free"
-    },
-    "contact": {
-      "title": "Contact Us",
-      "subtitle": "Our team is ready to answer your questions",
-      "name": "Full Name",
-      "email": "Email Address",
-      "phone": "Phone Number",
-      "message": "Your Message",
-      "submit": "Send",
-      "success": "Your message was sent successfully! We will contact you soon"
     }
   }
 }

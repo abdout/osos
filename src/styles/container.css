@@ -1,0 +1,68 @@
+/* Container Styles - Single Source of Truth */
+
+@layer components {
+  :root {
+    --container-padding-xs: 1.25rem;   /* 20px - mobile */
+    --container-padding-sm: 1.25rem;   /* 20px - sm 640px */
+    --container-padding-md: 1.25rem;   /* 20px - md 768px */
+    --container-padding-lg: 1.25rem;   /* 20px - lg 1024px */
+    --container-padding-xl: 1.25rem;   /* 20px - xl 1280px */
+
+    --container-max-sm: 640px;
+    --container-max-md: 768px;
+    --container-max-lg: 1024px;
+    --container-max-xl: 1280px;
+    --container-max-2xl: 1536px;
+  }
+
+  /* Layout container - uses global --container-padding */
+  .layout-container {
+    @apply w-full;
+    padding-inline: var(--container-padding);
+  }
+
+  /* Container max-widths */
+  .container { @apply w-full mx-auto; max-width: var(--container-max-xl); }
+  .container-sm { @apply w-full mx-auto; max-width: var(--container-max-sm); }
+  .container-md { @apply w-full mx-auto; max-width: var(--container-max-md); }
+  .container-lg { @apply w-full mx-auto; max-width: var(--container-max-lg); }
+  .container-xl { @apply w-full mx-auto; max-width: var(--container-max-xl); }
+  .container-2xl { @apply w-full mx-auto; max-width: var(--container-max-2xl); }
+  .container-fluid { @apply w-full; }
+  .container-prose { @apply w-full mx-auto; max-width: 65ch; }
+
+  /* Container wrapper (shadcn/ui pattern) */
+  .container-wrapper {
+    @apply mx-auto w-full;
+    padding-inline: var(--container-padding-xs);
+  }
+
+  .layout-container .container-wrapper { padding-inline: 0; }
+
+  @media (min-width: 640px) {
+    .container-wrapper { padding-inline: var(--container-padding-sm); }
+  }
+
+  @media (min-width: 768px) {
+    .container-wrapper { padding-inline: var(--container-padding-md); }
+  }
+
+  @media (min-width: 1024px) {
+    .container-wrapper { padding-inline: var(--container-padding-lg); }
+  }
+
+  @media (min-width: 1280px) {
+    .container-wrapper { padding-inline: var(--container-padding-xl); }
+  }
+
+  /* Section spacing */
+  .section-soft { @apply py-8 sm:py-12 lg:py-16; }
+  .border-grid { @apply border-b border-border; }
+
+  /* Full bleed */
+  .full-bleed {
+    width: 100vw;
+    position: relative;
+    margin-inline: calc(50% - 50vw);
+  }
+}

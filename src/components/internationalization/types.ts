@@ -28,6 +28,17 @@ export interface Dictionary {
     error: string
     warning: string
   }
+  header: {
+    home: string
+    features: string
+    tracking: string
+    solutions: string
+    pricing: string
+    contact: string
+    faq: string
+    signUp: string
+    login: string
+  }
   navigation: {
     dashboard: string
     shipments: string
@@ -186,59 +197,96 @@ export interface Dictionary {
   }
   marketing: {
     hero: {
+      badge: string
       title: string
       subtitle: string
       cta: string
-      contact: string
+      trackPlaceholder: string
     }
-    stats: {
-      years: string
-      yearsValue: string
-      shipments: string
-      shipmentsValue: string
-      clients: string
-      clientsValue: string
-      clearanceTime: string
-      clearanceTimeValue: string
+    partners: {
+      title: string
+    }
+    testimonial: {
+      quote: string
+      author: string
+      role: string
+    }
+    solutions: {
+      badge: string
+      title: string
+      subtitle: string
+      items: {
+        realTime: { title: string; description: string }
+        analytics: { title: string; description: string }
+        automated: { title: string; description: string }
+        multiCarrier: { title: string; description: string }
+        customs: { title: string; description: string }
+        warehouse: { title: string; description: string }
+      }
+    }
+    allInOne: {
+      badge: string
+      title: string
+      subtitle: string
+      features: {
+        documentation: { title: string; description: string }
+        tracking: { title: string; description: string }
+        invoicing: { title: string; description: string }
+        access: { title: string; description: string }
+      }
+    }
+    insights: {
+      badge: string
+      title: string
+      viewAll: string
+      articles: {
+        article1: { category: string; title: string; description: string; date: string }
+        article2: { category: string; title: string; description: string; date: string }
+        article3: { category: string; title: string; description: string; date: string }
+      }
     }
     services: {
+      badge: string
       title: string
       subtitle: string
-      import: { title: string; description: string }
-      export: { title: string; description: string }
-      warehouse: { title: string; description: string }
-      transport: { title: string; description: string }
+      items: {
+        sea: { type: string; tag1: string; tag2: string; title: string; description: string }
+        air: { type: string; tag1: string; tag2: string; title: string; description: string }
+        ground: { type: string; tag1: string; tag2: string; title: string; description: string }
+      }
     }
-    process: {
+    faq: {
       title: string
-      subtitle: string
-      step1: { title: string; description: string }
-      step2: { title: string; description: string }
-      step3: { title: string; description: string }
-      step4: { title: string; description: string }
+      items: {
+        q1: { question: string; answer: string }
+        q2: { question: string; answer: string }
+        q3: { question: string; answer: string }
+        q4: { question: string; answer: string }
+        q5: { question: string; answer: string }
+      }
     }
-    features: {
-      title: string
-      subtitle: string
-      tracking: { title: string; description: string }
-      invoicing: { title: string; description: string }
-      documents: { title: string; description: string }
-      access: { title: string; description: string }
-    }
-    cta: {
-      title: string
-      subtitle: string
-      button: string
-    }
-    contact: {
-      title: string
-      subtitle: string
-      name: string
-      email: string
-      phone: string
-      message: string
-      submit: string
-      success: string
+    footer: {
+      description: string
+      quickLinks: string
+      services: string
+      contact: string
+      copyright: string
+      links: {
+        home: string
+        features: string
+        tracking: string
+        solutions: string
+        pricing: string
+        import: string
+        export: string
+        warehouse: string
+        transport: string
+      }
+      contactInfo: {
+        address: string
+        phone: string
+        email: string
+      }
     }
   }
 }

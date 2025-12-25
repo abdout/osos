@@ -1,10 +1,14 @@
 import { Dictionary } from '@/components/internationalization/types'
+import { SiteHeader } from '@/components/template/site-header'
 import { Hero } from './hero'
-import { Stats } from './stats'
+import { Partners } from './partners'
 import { Services } from './services'
-import { Process } from './process'
-import { Features } from './features'
-import { Cta } from './cta'
+import { Testimonial } from './testimonial'
+import { Solutions } from './solutions'
+import { AllInOne } from './all-in-one'
+import { Insights } from './insights'
+import { Faq } from './faq'
+import { Footer } from './footer'
 
 interface MarketingContentProps {
   dictionary: Dictionary
@@ -13,13 +17,19 @@ interface MarketingContentProps {
 
 export function MarketingContent({ dictionary, lang }: MarketingContentProps) {
   return (
-    <main className="min-h-screen">
-      <Hero dictionary={dictionary} lang={lang} />
-      <Stats dictionary={dictionary} />
-      <Services dictionary={dictionary} />
-      <Process dictionary={dictionary} />
-      <Features dictionary={dictionary} />
-      <Cta dictionary={dictionary} lang={lang} />
-    </main>
+    <>
+      <SiteHeader dictionary={dictionary} />
+      <main className="min-h-screen">
+        <Hero dictionary={dictionary} />
+        <Partners />
+        <Services dictionary={dictionary} />
+        <Testimonial dictionary={dictionary} />
+        <Solutions dictionary={dictionary} />
+        <AllInOne dictionary={dictionary} />
+        <Insights dictionary={dictionary} lang={lang} />
+        <Faq dictionary={dictionary} />
+      </main>
+      <Footer dictionary={dictionary} lang={lang} />
+    </>
   )
 }
