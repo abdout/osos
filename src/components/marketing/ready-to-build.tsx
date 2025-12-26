@@ -13,12 +13,12 @@ function ReadyToBuildSection({ dictionary }: ReadyToBuildSectionProps) {
 
   return (
     <section
-      className="bg-[#266DF0] py-8 md:py-12 overflow-hidden"
+      className="bg-[#DC2626] py-8 md:py-12 overflow-hidden"
       data-section="ready-to-build"
     >
       <div className="layout-container flex flex-col md:flex-row justify-between items-center gap-6 md:gap-10">
         <div className="flex-1 max-w-xl">
-          <blockquote className="text-[#A0BFF8] text-lg md:text-xl leading-relaxed mb-5">
+          <blockquote className="text-[#FCA5A5] text-lg md:text-xl leading-relaxed mb-5">
             &ldquo;{testimonial.quote}&rdquo;
           </blockquote>
           <div className="flex items-center gap-3">
@@ -27,7 +27,7 @@ function ReadyToBuildSection({ dictionary }: ReadyToBuildSectionProps) {
             </div>
             <div>
               <p className="text-white font-semibold">{testimonial.author}</p>
-              <p className="text-[#A0BFF8] text-sm">{testimonial.role}</p>
+              <p className="text-[#FCA5A5] text-sm">{testimonial.role}</p>
             </div>
           </div>
         </div>
