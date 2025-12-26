@@ -101,7 +101,7 @@ export function InvoiceForm({
                 name="shipmentId"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{dictionary.navigation.shipments}</FormLabel>
+                    <FormLabel>{dictionary.navigation.projects}</FormLabel>
                     <Select onValueChange={field.onChange} value={field.value}>
                       <FormControl>
                         <SelectTrigger>
@@ -125,7 +125,7 @@ export function InvoiceForm({
                 name="currency"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{dictionary.customs.currency || "Currency"}</FormLabel>
+                    <FormLabel>{dictionary.certificates.systemType || "Currency"}</FormLabel>
                     <Select onValueChange={field.onChange} value={field.value}>
                       <FormControl>
                         <SelectTrigger>
@@ -208,7 +208,7 @@ export function InvoiceForm({
                     render={({ field }) => (
                       <FormItem>
                         {index === 0 && (
-                          <FormLabel>{dictionary.shipments.quantity || "Qty"}</FormLabel>
+                          <FormLabel>{dictionary.common.all || "Qty"}</FormLabel>
                         )}
                         <FormControl>
                           <Input type="number" min={1} {...field} />

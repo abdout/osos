@@ -100,7 +100,7 @@ export function InvoiceDetail({ invoice, dictionary, locale }: InvoiceDetailProp
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">
-                  {dictionary.customs.currency || "Currency"}
+                  {dictionary.certificates.systemType || "Currency"}
                 </p>
                 <p className="font-medium">{invoice.currency}</p>
               </div>
@@ -139,19 +139,19 @@ export function InvoiceDetail({ invoice, dictionary, locale }: InvoiceDetailProp
         {invoice.shipment && (
           <Card>
             <CardHeader>
-              <CardTitle>{dictionary.navigation.shipments || "Shipment"}</CardTitle>
+              <CardTitle>{dictionary.navigation.projects || "Project"}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <p className="text-sm text-muted-foreground">
-                    {dictionary.shipments.shipmentNumber || "Shipment #"}
+                    {dictionary.projects.projectNumber || "Project #"}
                   </p>
                   <p className="font-medium">{invoice.shipment.shipmentNumber}</p>
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">
-                    {dictionary.shipments.status || "Status"}
+                    {dictionary.projects.status || "Status"}
                   </p>
                   <p className="font-medium">{invoice.shipment.status}</p>
                 </div>
@@ -171,7 +171,7 @@ export function InvoiceDetail({ invoice, dictionary, locale }: InvoiceDetailProp
               <TableRow>
                 <TableHead>{dictionary.invoices.itemDescription || "Description"}</TableHead>
                 <TableHead className="text-end">
-                  {dictionary.shipments.quantity || "Qty"}
+                  {dictionary.common.all || "Qty"}
                 </TableHead>
                 <TableHead className="text-end">
                   {dictionary.invoices.unitPrice || "Unit Price"}

@@ -41,7 +41,7 @@ export function TrackingHeader({ data, dictionary, locale }: TrackingHeaderProps
             <div>
               <CardTitle className="text-lg">{data.trackingNumber}</CardTitle>
               <p className="text-sm text-muted-foreground">
-                {dictionary.tracking.shipmentInfo}
+                {dictionary.tracking.projectInfo}
               </p>
             </div>
           </div>
@@ -77,11 +77,11 @@ export function TrackingHeader({ data, dictionary, locale }: TrackingHeaderProps
             </Badge>
           </div>
 
-          {/* Vessel Name */}
+          {/* Facility Name */}
           {data.vesselName && (
             <div className="space-y-1">
               <p className="text-sm font-medium text-muted-foreground">
-                {dictionary.tracking.vesselName}
+                {dictionary.tracking.facilityName}
               </p>
               <div className="flex items-center gap-2">
                 <IconShip className="h-4 w-4 text-muted-foreground" />
@@ -90,13 +90,13 @@ export function TrackingHeader({ data, dictionary, locale }: TrackingHeaderProps
             </div>
           )}
 
-          {/* Container Number */}
-          {data.containerNumber && (
+          {/* Project Type */}
+          {data.shipmentType && (
             <div className="space-y-1">
               <p className="text-sm font-medium text-muted-foreground">
-                {dictionary.tracking.containerNumber}
+                {dictionary.tracking.projectType}
               </p>
-              <span className="font-medium">{data.containerNumber}</span>
+              <span className="font-medium">{data.shipmentType}</span>
             </div>
           )}
 

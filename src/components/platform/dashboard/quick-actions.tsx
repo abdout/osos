@@ -25,16 +25,16 @@ interface QuickActionsProps {
 export function QuickActions({ dictionary, locale }: QuickActionsProps) {
   const actions = [
     {
-      title: dictionary.dashboard.newShipment,
-      href: `/${locale}/shipments/new`,
+      title: dictionary.dashboard.newProject,
+      href: `/${locale}/projects/new`,
       icon: IconShip,
-      description: dictionary.shipments.title,
+      description: dictionary.projects.title,
     },
     {
-      title: dictionary.dashboard.newDeclaration,
-      href: `/${locale}/customs/new`,
+      title: dictionary.dashboard.newCertificate,
+      href: `/${locale}/certificates/new`,
       icon: IconFileDescription,
-      description: dictionary.customs.title,
+      description: dictionary.certificates.title,
     },
     {
       title: dictionary.dashboard.newInvoice,

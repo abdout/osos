@@ -139,7 +139,7 @@ export function TrackingAdminControls({
             {/* All stages completed */}
             {!nextStage && currentStage === "DELIVERED" && (
               <div className="rounded-md bg-green-50 p-3 text-center text-sm text-green-700 dark:bg-green-900/20 dark:text-green-400">
-                {dictionary.tracking.stageDescriptions.DELIVERED}
+                {dictionary.tracking.stageDescriptions.HANDOVER}
               </div>
             )}
           </>

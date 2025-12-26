@@ -41,8 +41,8 @@ export function AppHeader({ dictionary, locale, user }: AppHeaderProps) {
 
   const getPageTitle = () => {
     if (pathname.includes('/dashboard')) return dictionary.dashboard.title
-    if (pathname.includes('/shipments')) return dictionary.shipments.title
-    if (pathname.includes('/customs')) return dictionary.customs.title
+    if (pathname.includes('/projects')) return dictionary.projects.title
+    if (pathname.includes('/certificates')) return dictionary.certificates.title
     if (pathname.includes('/invoices')) return dictionary.invoices.title
     if (pathname.includes('/settings')) return dictionary.settings.title
     return dictionary.common.appName

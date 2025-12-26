@@ -38,11 +38,13 @@ export interface Dictionary {
     platform: string
     signUp: string
     login: string
+    projects: string
+    certificates: string
   }
   navigation: {
     dashboard: string
-    shipments: string
-    customs: string
+    projects: string
+    certificates: string
     invoices: string
     settings: string
     users: string
@@ -107,60 +109,63 @@ export interface Dictionary {
   }
   dashboard: {
     title: string
-    totalShipments: string
-    inTransit: string
-    pendingCustoms: string
+    totalProjects: string
+    inProgress: string
+    pendingInspection: string
     unpaidInvoices: string
-    recentShipments: string
+    recentProjects: string
     quickActions: string
-    newShipment: string
-    newDeclaration: string
+    newProject: string
+    newCertificate: string
     newInvoice: string
     trendingUp: string
     trendingDown: string
   }
-  shipments: {
+  projects: {
     title: string
-    newShipment: string
-    editShipment: string
-    shipmentDetails: string
-    shipmentNumber: string
+    newProject: string
+    editProject: string
+    projectDetails: string
+    projectNumber: string
     type: string
     status: string
     description: string
-    weight: string
-    quantity: string
-    containerNumber: string
-    vesselName: string
-    consignor: string
-    consignee: string
-    arrivalDate: string
-    departureDate: string
+    area: string
+    floors: string
+    facilityName: string
+    facilityType: string
+    client: string
+    contactPerson: string
+    startDate: string
+    completionDate: string
     types: {
-      IMPORT: string
-      EXPORT: string
+      FIRE_ALARM: string
+      SUPPRESSION: string
+      SPRINKLER: string
+      MAINTENANCE: string
+      CONSULTATION: string
     }
     statuses: {
       PENDING: string
-      IN_TRANSIT: string
-      ARRIVED: string
-      CLEARED: string
-      DELIVERED: string
+      IN_PROGRESS: string
+      INSTALLATION: string
+      TESTING: string
+      COMPLETED: string
     }
     createSuccess: string
     updateSuccess: string
     deleteSuccess: string
   }
-  customs: {
+  certificates: {
     title: string
-    newDeclaration: string
-    editDeclaration: string
-    declarationDetails: string
-    declarationNumber: string
-    hsCode: string
-    dutyAmount: string
-    taxAmount: string
-    currency: string
+    newCertificate: string
+    editCertificate: string
+    certificateDetails: string
+    certificateNumber: string
+    systemType: string
+    issueDate: string
+    expiryDate: string
+    issuedBy: string
     documents: string
     uploadDocument: string
     approve: string
@@ -174,11 +179,11 @@ export interface Dictionary {
       REJECTED: string
     }
     documentTypes: {
-      BILL_OF_LADING: string
-      COMMERCIAL_INVOICE: string
-      PACKING_LIST: string
-      CERTIFICATE_OF_ORIGIN: string
-      INSURANCE_CERTIFICATE: string
+      CIVIL_DEFENSE_CERTIFICATE: string
+      SYSTEM_DESIGN: string
+      INSPECTION_REPORT: string
+      TEST_REPORT: string
+      MAINTENANCE_CONTRACT: string
       OTHER: string
     }
   }
@@ -441,38 +446,38 @@ export interface Dictionary {
     estimatedDelivery: string
     lastUpdated: string
     progress: string
-    shipmentInfo: string
+    projectInfo: string
     trackingNumber: string
-    vesselName: string
-    containerNumber: string
-    consignee: string
+    facilityName: string
+    projectType: string
+    client: string
     copyLink: string
     linkCopied: string
     stages: {
-      PRE_ARRIVAL_DOCS: string
-      VESSEL_ARRIVAL: string
-      CUSTOMS_DECLARATION: string
-      CUSTOMS_PAYMENT: string
+      CONSULTATION: string
+      SITE_SURVEY: string
+      DESIGN: string
+      CIVIL_DEFENSE_APPROVAL: string
+      MATERIAL_PROCUREMENT: string
+      INSTALLATION: string
+      TESTING: string
       INSPECTION: string
-      PORT_FEES: string
-      QUALITY_STANDARDS: string
-      RELEASE: string
-      LOADING: string
-      IN_TRANSIT: string
-      DELIVERED: string
+      CERTIFICATION: string
+      HANDOVER: string
+      MAINTENANCE: string
     }
     stageDescriptions: {
-      PRE_ARRIVAL_DOCS: string
-      VESSEL_ARRIVAL: string
-      CUSTOMS_DECLARATION: string
-      CUSTOMS_PAYMENT: string
+      CONSULTATION: string
+      SITE_SURVEY: string
+      DESIGN: string
+      CIVIL_DEFENSE_APPROVAL: string
+      MATERIAL_PROCUREMENT: string
+      INSTALLATION: string
+      TESTING: string
       INSPECTION: string
-      PORT_FEES: string
-      QUALITY_STANDARDS: string
-      RELEASE: string
-      LOADING: string
-      IN_TRANSIT: string
-      DELIVERED: string
+      CERTIFICATION: string
+      HANDOVER: string
+      MAINTENANCE: string
     }
     statuses: {
       PENDING: string

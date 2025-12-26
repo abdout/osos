@@ -46,9 +46,9 @@ export default async function DashboardPage({
   const unpaidTotal = Number(unpaidInvoicesResult._sum.total || 0)
 
   const stats = {
-    totalShipments: { value: totalShipments, trend: 12 },
-    inTransit: { value: inTransit, trend: 5 },
-    pendingCustoms: { value: pendingCustoms, trend: -3 },
+    totalProjects: { value: totalShipments, trend: 12 },
+    inProgress: { value: inTransit, trend: 5 },
+    pendingInspection: { value: pendingCustoms, trend: -3 },
     unpaidInvoices: {
       value: `SDG ${unpaidTotal.toLocaleString()}`,
       trend: 8,

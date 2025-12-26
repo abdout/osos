@@ -1,6 +1,6 @@
 {
   "common": {
-    "appName": "Abdout",
+    "appName": "USUS ALSALAMAH",
     "save": "Save",
     "cancel": "Cancel",
     "delete": "Delete",
@@ -32,14 +32,16 @@
     "services": "Services",
     "blog": "Blog",
     "about": "About",
-    "platform": "Platform",
+    "platform": "Portal",
     "signUp": "Sign Up",
-    "login": "Login"
+    "login": "Login",
+    "projects": "Projects",
+    "certificates": "Certificates"
   },
   "navigation": {
     "dashboard": "Dashboard",
-    "shipments": "Shipments",
-    "customs": "Customs",
+    "projects": "Projects",
+    "certificates": "Certificates",
     "invoices": "Invoices",
     "settings": "Settings",
     "users": "Users",
@@ -104,60 +106,63 @@
   },
   "dashboard": {
     "title": "Dashboard",
-    "totalShipments": "Total Shipments",
-    "inTransit": "In Transit",
-    "pendingCustoms": "Pending Customs",
+    "totalProjects": "Total Projects",
+    "inProgress": "In Progress",
+    "pendingInspection": "Pending Inspection",
     "unpaidInvoices": "Unpaid Invoices",
-    "recentShipments": "Recent Shipments",
+    "recentProjects": "Recent Projects",
     "quickActions": "Quick Actions",
-    "newShipment": "New Shipment",
-    "newDeclaration": "New Declaration",
+    "newProject": "New Project",
+    "newCertificate": "New Certificate",
     "newInvoice": "New Invoice",
     "trendingUp": "Trending up this month",
     "trendingDown": "Down this period"
   },
-  "shipments": {
-    "title": "Shipments",
-    "newShipment": "New Shipment",
-    "editShipment": "Edit Shipment",
-    "shipmentDetails": "Shipment Details",
-    "shipmentNumber": "Shipment Number",
+  "projects": {
+    "title": "Projects",
+    "newProject": "New Project",
+    "editProject": "Edit Project",
+    "projectDetails": "Project Details",
+    "projectNumber": "Project Number",
     "type": "Type",
     "status": "Status",
     "description": "Description",
-    "weight": "Weight",
-    "quantity": "Quantity",
-    "containerNumber": "Container Number",
-    "vesselName": "Vessel Name",
-    "consignor": "Consignor",
-    "consignee": "Consignee",
-    "arrivalDate": "Arrival Date",
-    "departureDate": "Departure Date",
+    "area": "Area (sqm)",
+    "floors": "Floors",
+    "facilityName": "Facility Name",
+    "facilityType": "Facility Type",
+    "client": "Client",
+    "contactPerson": "Contact Person",
+    "startDate": "Start Date",
+    "completionDate": "Completion Date",
     "types": {
-      "IMPORT": "Import",
-      "EXPORT": "Export"
+      "FIRE_ALARM": "Fire Alarm",
+      "SUPPRESSION": "Suppression System",
+      "SPRINKLER": "Sprinkler System",
+      "MAINTENANCE": "Maintenance",
+      "CONSULTATION": "Consultation"
     },
     "statuses": {
       "PENDING": "Pending",
-      "IN_TRANSIT": "In Transit",
-      "ARRIVED": "Arrived",
-      "CLEARED": "Cleared",
-      "DELIVERED": "Delivered"
+      "IN_PROGRESS": "In Progress",
+      "INSTALLATION": "Installation",
+      "TESTING": "Testing",
+      "COMPLETED": "Completed"
     },
-    "createSuccess": "Shipment created successfully",
-    "updateSuccess": "Shipment updated successfully",
-    "deleteSuccess": "Shipment deleted successfully"
+    "createSuccess": "Project created successfully",
+    "updateSuccess": "Project updated successfully",
+    "deleteSuccess": "Project deleted successfully"
   },
-  "customs": {
-    "title": "Customs Declarations",
-    "newDeclaration": "New Declaration",
-    "editDeclaration": "Edit Declaration",
-    "declarationDetails": "Declaration Details",
-    "declarationNumber": "Declaration Number",
-    "hsCode": "HS Code",
-    "dutyAmount": "Duty Amount",
-    "taxAmount": "Tax Amount",
-    "currency": "Currency",
+  "certificates": {
+    "title": "Certificates",
+    "newCertificate": "New Certificate",
+    "editCertificate": "Edit Certificate",
+    "certificateDetails": "Certificate Details",
+    "certificateNumber": "Certificate Number",
+    "systemType": "System Type",
+    "issueDate": "Issue Date",
+    "expiryDate": "Expiry Date",
+    "issuedBy": "Issued By",
     "documents": "Documents",
     "uploadDocument": "Upload Document",
     "approve": "Approve",
@@ -171,11 +176,11 @@
       "REJECTED": "Rejected"
     },
     "documentTypes": {
-      "BILL_OF_LADING": "Bill of Lading",
-      "COMMERCIAL_INVOICE": "Commercial Invoice",
-      "PACKING_LIST": "Packing List",
-      "CERTIFICATE_OF_ORIGIN": "Certificate of Origin",
-      "INSURANCE_CERTIFICATE": "Insurance Certificate",
+      "CIVIL_DEFENSE_CERTIFICATE": "Civil Defense Certificate",
+      "SYSTEM_DESIGN": "System Design",
+      "INSPECTION_REPORT": "Inspection Report",
+      "TEST_REPORT": "Test Report",
+      "MAINTENANCE_CONTRACT": "Maintenance Contract",
       "OTHER": "Other"
     }
   },
@@ -248,214 +253,214 @@
       "who": {
         "subtitle": "W h o   W e   A r e",
         "title": "Who We Are",
-        "description": "Established in 1985, Abdout was founded with the goal of supporting and developing the local community by providing exceptional customs clearance and logistics services that enhance trade efficiency and meet business needs transparently. Since our establishment, we have been committed to building a service system based on reliability, expertise, and sustainable business practices."
+        "description": "Established over 20 years ago, USUS ALSALAMAH was founded with the mission of protecting lives and properties across Saudi Arabia. We are a Civil Defense certified contractor specializing in comprehensive fire protection systems for commercial, industrial, and residential facilities. Our commitment to excellence and safety has made us a trusted partner for businesses throughout the Kingdom."
       },
       "why": {
         "subtitle": "W h y   U s",
         "title": "Why Us",
-        "description": "We believe that efficient logistics is the foundation for successful trade. With our dedication to offering high-quality services that reflect the aspirations of businesses, we meet growing needs efficiently. Our commitment to transparency, professional values, and sustainable practices makes us the trusted choice for customs clearance services in Port Sudan."
+        "description": "We believe that fire safety is not just a requirement—it's a responsibility. With our dedication to providing cutting-edge protection systems and professional service, we ensure your facilities meet the highest safety standards. Our Civil Defense certification, experienced team, and use of quality equipment from leading manufacturers make us the trusted choice for fire protection in Saudi Arabia."
       },
       "mission": {
         "subtitle": "O u r   M i s s i o n",
         "title": "Our Vision and Mission",
-        "description": "To provide an effective logistics environment that supports businesses, offers reliable services, and launches developmental initiatives and strategic partnerships that enhance trade efficiency and economic growth. We strive to be the leading customs clearance company that promotes seamless international trade."
+        "description": "To be the leading fire protection company in Saudi Arabia, providing innovative and reliable safety solutions that protect lives and assets. We strive to deliver excellence in every project, from initial consultation through installation and ongoing maintenance, ensuring complete peace of mind for our clients."
       }
     },
     "goals": [
       {
-        "title": "Business Support",
-        "description": "Building strong business relationships through reliable services that support importers and exporters in achieving their goals."
+        "title": "Safety First",
+        "description": "Protecting lives and properties through professional installation and maintenance of fire protection systems that meet the highest standards."
       },
       {
-        "title": "Quality Services",
-        "description": "Delivering reliable, high-quality customs clearance and logistics services that meet the evolving needs of our clients with transparency and efficiency."
+        "title": "Quality Excellence",
+        "description": "Delivering reliable, high-quality fire safety solutions using equipment from leading manufacturers and certified installation practices."
       },
       {
-        "title": "Sustainable Growth",
-        "description": "Implementing sustainable business practices that ensure long-term growth and prosperity for our company and clients."
+        "title": "Customer Trust",
+        "description": "Building lasting relationships through transparent service, expert guidance, and responsive 24/7 support for all our clients."
       }
     ],
     "boardOfDirectors": {
       "subtitle": "O u r   L e a d e r s h i p",
-      "title": "Board of Directors",
-      "description": "Meet our dedicated team members who guide Abdout with their expertise and commitment to excellence.",
+      "title": "Our Team",
+      "description": "Meet our dedicated team members who lead USUS ALSALAMAH with their expertise and commitment to fire safety excellence.",
       "members": [
-        { "name": "Mazin Abdout", "position": "CEO" },
-        { "name": "Sami Dirar", "position": "COO" },
-        { "name": "William Parker", "position": "CTO" },
-        { "name": "David Mitchell", "position": "CFO" },
-        { "name": "James Wilson", "position": "CMO" },
-        { "name": "Robert Chen", "position": "CPO" },
-        { "name": "Michael Brown", "position": "CLO" },
-        { "name": "Thomas Anderson", "position": "CSO" }
+        { "name": "Ahmed Al-Saud", "position": "CEO" },
+        { "name": "Khalid Al-Rashid", "position": "Operations Director" },
+        { "name": "Mohammed Al-Fahad", "position": "Technical Director" },
+        { "name": "Omar Al-Hassan", "position": "Finance Director" },
+        { "name": "Faisal Al-Qahtani", "position": "Projects Manager" },
+        { "name": "Youssef Al-Ahmad", "position": "Safety Engineer" },
+        { "name": "Ibrahim Al-Malik", "position": "Quality Manager" },
+        { "name": "Sultan Al-Otaibi", "position": "Service Manager" }
       ]
     }
   },
   "marketing": {
     "hero": {
-      "badge": "CUSTOMS CLEARANCE SERVICES",
-      "titleLine1": "Precision in",
-      "titleLine2": "Every Shipment",
-      "titleMobileLine1": "Precision",
-      "titleMobileLine2": "in Every",
-      "titleMobileLine3": "Shipment",
-      "subtitle": "Streamline your import and export operations with our integrated digital platform, real-time tracking, and expert customs clearance team in Port Sudan.",
-      "cta": "Get Started",
-      "trackPlaceholder": "Enter tracking number",
+      "badge": "FIRE PROTECTION SERVICES",
+      "titleLine1": "Complete Fire",
+      "titleLine2": "Protection",
+      "titleMobileLine1": "Complete",
+      "titleMobileLine2": "Fire",
+      "titleMobileLine3": "Protection",
+      "subtitle": "USUS ALSALAMAH provides cutting-edge firefighting and protection systems for commercial, industrial, and residential facilities across Saudi Arabia. Certified by Civil Defense with over 15 years of excellence.",
+      "cta": "Get Free Consultation",
+      "trackPlaceholder": "Enter project number",
       "trackButton": "Track"
     },
     "partners": {
-      "title": "Trusted by leading shipping companies"
+      "title": "Trusted by leading companies across Saudi Arabia"
     },
     "testimonial": {
-      "quote": "Abdout transformed how we handle shipments. Real-time tracking and automated alerts have made our operations incredibly smooth and efficient.",
-      "author": "Ahmed Hassan",
-      "role": "Import Manager, Sudan Trading Co."
+      "quote": "USUS ALSALAMAH transformed our facility's fire safety. Their professional installation and ongoing support give us complete peace of mind.",
+      "author": "Mohammed Al-Rashid",
+      "role": "Facilities Manager, Industrial Complex"
     },
     "solutions": {
       "badge": "OUR SOLUTIONS",
-      "title": "Logistics Solutions That Move you Forward",
-      "subtitle": "Comprehensive customs clearance and logistics services designed to streamline your operations.",
+      "title": "Fire Protection Solutions That Keep You Safe",
+      "subtitle": "Comprehensive fire safety systems and services designed to protect your facilities.",
       "items": {
         "realTime": {
-          "title": "Real-Time Tracking",
-          "description": "Monitor your shipments status 24/7 with live updates and notifications."
+          "title": "24/7 Monitoring",
+          "description": "Round-the-clock fire detection and monitoring with instant alert systems."
         },
         "analytics": {
-          "title": "Smart Analytics",
-          "description": "Data-driven insights to optimize your supply chain and reduce costs."
+          "title": "Risk Assessment",
+          "description": "Professional fire risk analysis and safety audits for your facility."
         },
         "automated": {
           "title": "Automated Alerts",
-          "description": "Stay informed with instant notifications on shipment milestones."
+          "description": "Stay protected with instant notifications and emergency response activation."
         },
         "multiCarrier": {
-          "title": "Multi-Carrier Support",
-          "description": "Seamless integration with major shipping lines and carriers."
+          "title": "Civil Defense Certified",
+          "description": "All installations meet Saudi Civil Defense standards and regulations."
         },
         "customs": {
-          "title": "Customs Processing",
-          "description": "Expert handling of all customs documentation and procedures."
+          "title": "Code Compliance",
+          "description": "Expert guidance on NFPA, SASO, and local fire safety codes."
         },
         "warehouse": {
-          "title": "Warehouse Management",
-          "description": "Secure storage with complete inventory tracking and control."
+          "title": "Annual Maintenance",
+          "description": "Scheduled inspections and maintenance to ensure system reliability."
         }
       }
     },
     "allInOne": {
       "badge": "COMPLETE SOLUTION",
-      "title": "All-in-One Freight and Logistics System",
-      "subtitle": "Experience seamless cargo management with our comprehensive platform that handles everything from customs clearance to final delivery.",
+      "title": "All-in-One Fire Protection System",
+      "subtitle": "Experience comprehensive fire safety management with our integrated platform that handles everything from system design to ongoing maintenance.",
       "features": {
         "documentation": {
           "title": "Complete Documentation",
-          "description": "Digital customs documentation with secure cloud storage, quick retrieval, and automated compliance verification"
+          "description": "Digital certificates and compliance documentation with secure cloud storage and quick retrieval"
         },
         "tracking": {
-          "title": "Real-Time Tracking",
-          "description": "Monitor shipment status with live updates and automated notifications"
+          "title": "Project Tracking",
+          "description": "Monitor installation progress with live updates and automated notifications"
         },
         "invoicing": {
-          "title": "Multi-Currency Invoicing",
-          "description": "Flexible multi-currency invoicing with automated duty calculations and seamless payment processing"
+          "title": "Flexible Invoicing",
+          "description": "Professional invoicing with automated calculations and seamless payment processing"
         },
         "access": {
           "title": "Team Access Control",
-          "description": "Role-based permissions for secure team collaboration and management"
+          "description": "Role-based permissions for secure team collaboration and project management"
         }
       },
       "tags": {
         "control": "Control",
-        "ops": "Ops",
+        "ops": "Safety",
         "cost": "Cost",
         "efficiency": "Efficiency",
         "speed": "Speed",
-        "accuracy": "Accuracy"
+        "accuracy": "Quality"
       }
     },
     "insights": {
       "badge": "BLOG",
-      "title": "Latest Insights and Trends",
+      "title": "Latest Fire Safety Insights",
       "viewAll": "See more",
       "articles": {
         "article1": {
           "category": "News",
-          "title": "New Customs Regulations for 2025",
-          "description": "New leadership accelerates innovation and growth across regional operations to strengthen market presence.",
+          "title": "New Civil Defense Regulations for 2025",
+          "description": "Updated fire safety codes and requirements for commercial buildings across Saudi Arabia.",
           "date": "July 22, 2025"
         },
         "article2": {
-          "category": "News",
-          "title": "Optimizing Your Supply Chain",
-          "description": "New platform policy streamlines operations and ensures service continuity while driving operational excellence.",
+          "category": "Guide",
+          "title": "Choosing the Right Fire Alarm System",
+          "description": "A comprehensive guide to selecting addressable vs conventional fire detection systems for your facility.",
           "date": "July 20, 2025"
         },
         "article3": {
-          "category": "News",
-          "title": "Digital Transformation in Logistics",
-          "description": "Revolutionizing Liquid Transport: How Smart SaaS Technology Optimizes Bulk Supply Chain Efficiency and reduces operational costs significantly.",
+          "category": "Safety",
+          "title": "Fire Prevention Best Practices",
+          "description": "Essential fire safety tips and maintenance schedules to protect your commercial or industrial property.",
           "date": "July 18, 2025"
         }
       }
     },
     "services": {
-      "badge": "OUR SERVICE",
-      "title": "Logistics Solutions That Move you Forward",
-      "subtitle": "Ensure every delivery is accurate, on time, and fully optimized with intelligent logistics and real-time tracking.",
+      "badge": "OUR SERVICES",
+      "title": "Fire Protection Solutions That Keep You Safe",
+      "subtitle": "Comprehensive fire safety systems designed, installed, and maintained to the highest standards.",
       "items": {
         "sea": {
-          "type": "SEA",
-          "tag1": "Cost-effective",
-          "tag2": "Bulk Transport",
-          "title": "Maritime Shipping",
-          "description": "Optimized sea-based logistics with real-time tracking and seamless coordination."
+          "type": "ALARM",
+          "tag1": "24/7 Monitoring",
+          "tag2": "Civil Defense Certified",
+          "title": "Fire Alarm Systems",
+          "description": "Advanced addressable and conventional fire detection systems with integrated monitoring."
         },
         "air": {
-          "type": "AIR",
-          "tag1": "Global Reach",
-          "tag2": "High Security",
-          "title": "Aerial Cargo",
-          "description": "Fast, secure air logistics powered by intelligent routing and cloud integration."
+          "type": "SUPPRESSION",
+          "tag1": "FM-200 & CO2",
+          "tag2": "Automatic",
+          "title": "Suppression Systems",
+          "description": "Clean agent, CO2, and foam suppression systems for critical facility protection."
         },
         "ground": {
-          "type": "GROUND",
-          "tag1": "Flexible",
-          "tag2": "Real-time Tracking",
-          "title": "Ground Transport",
-          "description": "Reliable land-based delivery with smart scheduling and route optimization tools."
+          "type": "SPRINKLER",
+          "tag1": "NFPA Compliant",
+          "tag2": "All Building Types",
+          "title": "Sprinkler Systems",
+          "description": "Wet, dry, and pre-action sprinkler systems with professional hydraulic calculations."
         }
       }
     },
     "faq": {
       "title": "Frequently Asked Questions",
       "titleMobile": "FAQ",
-      "subtitle": "Your guide to our services and plans.",
+      "subtitle": "Your guide to our fire protection services.",
       "items": {
         "q1": {
-          "question": "What's included in the One Project plan?",
-          "answer": "The One Project plan includes complete custom development for a single automation solution, including consultation, development, testing, and deployment."
+          "question": "What fire alarm systems do you install?",
+          "answer": "We install both addressable and conventional fire alarm systems from leading manufacturers. Our systems include smoke detectors, heat detectors, manual call points, and integrated control panels with 24/7 monitoring capabilities."
         },
         "q2": {
-          "question": "How does the hourly billing work for Strategic Partner?",
-          "answer": "With Strategic Partner, you get access to our development team at $10/hour. Perfect for ongoing projects, maintenance, or when you need flexible development resources."
+          "question": "Do you provide Civil Defense certification?",
+          "answer": "Yes, all our installations are fully compliant with Saudi Civil Defense regulations. We handle the entire certification process, from design approval to final inspection and certificate issuance."
         },
         "q3": {
-          "question": "Can I switch between plans?",
-          "answer": "Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle."
+          "question": "What maintenance services do you offer?",
+          "answer": "We offer comprehensive maintenance contracts including quarterly inspections, annual testing, certified reports, and 24/7 emergency support. All maintenance is performed using original spare parts."
         },
         "q4": {
-          "question": "Do you offer enterprise solutions?",
-          "answer": "Absolutely! For enterprise needs, we offer custom solutions with dedicated teams, SLAs, and specialized support. Contact us for a tailored quote."
+          "question": "Do you serve residential properties?",
+          "answer": "Yes, we serve commercial, industrial, and residential properties across Saudi Arabia. Our team can design and install fire protection systems suitable for any building type and size."
         },
         "q5": {
-          "question": "What support is included?",
-          "answer": "All plans include email support. Higher tiers get priority response times and dedicated account managers for seamless communication."
+          "question": "How quickly can you respond to emergencies?",
+          "answer": "We offer 24/7 emergency service with rapid response times. For maintenance contract clients, we guarantee priority response within hours for critical issues."
         }
       }
     },
     "footer": {
-      "description": "Your trusted partner for customs clearance and logistics services in Port Sudan. Fast, reliable, and transparent.",
+      "description": "Your trusted partner for fire protection and safety systems in Saudi Arabia. Certified, reliable, and professional.",
       "quickLinks": "Quick Links",
       "services": "Services",
       "contact": "Contact",
@@ -464,20 +469,20 @@
       "copyright": "All rights reserved.",
       "newsletter": {
         "title": "Subscribe to Newsletter",
-        "description": "Stay updated with the latest news and offers.",
+        "description": "Stay updated with the latest fire safety news and tips.",
         "placeholder": "Enter your email",
         "button": "Subscribe"
       },
       "links": {
         "home": "Home",
         "features": "Features",
-        "tracking": "Tracking",
+        "tracking": "Projects",
         "solutions": "Solutions",
         "pricing": "Pricing",
-        "import": "Import Clearance",
-        "export": "Export Clearance",
-        "warehouse": "Warehousing",
-        "transport": "Transportation",
+        "import": "Fire Alarms",
+        "export": "Suppression Systems",
+        "warehouse": "Sprinklers",
+        "transport": "Maintenance",
         "about": "About",
         "careers": "Careers",
         "blog": "Blog",
@@ -486,43 +491,43 @@
         "status": "Status"
       },
       "contactInfo": {
-        "address": "Port Sudan, Red Sea State, Sudan",
-        "phone": "+249 123 456 789",
-        "email": "info@mazin.sd"
+        "address": "Riyadh, Kingdom of Saudi Arabia",
+        "phone": "+966 50 442 7517",
+        "email": "info@ususalsalamah.com"
       }
     },
     "gas": {
-      "subtitle": "Next-Generation Shipping",
-      "title": "3GS Container Solutions",
-      "description": "Experience the future of global logistics with our intelligent container management system. From port to destination, we ensure your cargo travels safely and efficiently.",
+      "subtitle": "Civil Defense Certified Contractor",
+      "title": "Complete Fire Protection",
+      "description": "Experience comprehensive fire safety with our integrated protection systems. From design to maintenance, we ensure your facilities are protected to the highest standards.",
       "features": {
         "global": {
-          "title": "Global Reach",
-          "description": "Seamless logistics across 150+ countries with real-time tracking"
+          "title": "Kingdom-Wide Service",
+          "description": "Comprehensive coverage across Saudi Arabia with rapid response"
         },
         "smart": {
-          "title": "Smart Containers",
-          "description": "IoT-enabled containers with temperature and humidity monitoring"
+          "title": "Smart Detection",
+          "description": "Advanced addressable systems with real-time monitoring and alerts"
         },
         "fast": {
-          "title": "Fast Clearance",
-          "description": "Automated customs processing reduces delays by 70%"
+          "title": "Fast Certification",
+          "description": "Streamlined Civil Defense approval process for quick compliance"
         }
       },
       "stats": {
-        "containers": "50K+",
-        "containersLabel": "Containers Shipped",
-        "delivery": "99.8%",
-        "deliveryLabel": "On-Time Delivery"
+        "containers": "500+",
+        "containersLabel": "Projects Completed",
+        "delivery": "20+",
+        "deliveryLabel": "Years Experience"
       },
-      "cta": "Explore Our Fleet"
+      "cta": "Explore Our Services"
     }
   },
   "chatbot": {
     "openChat": "Open chat",
     "closeChat": "Close chat",
     "placeholder": "Type your message...",
-    "welcomeMessage": "Hello! How can I help you with your shipping needs?",
+    "welcomeMessage": "Hello! How can I help you with your fire safety needs?",
     "noMessages": "No messages yet. Start a conversation!",
     "errorMessage": "Sorry, something went wrong. Please try again.",
     "typing": "Typing...",
@@ -534,12 +539,12 @@
     "speechNotSupported": "Speech recognition is not supported in your browser.",
     "speechError": "Speech recognition error. Please try again.",
     "quickActions": {
-      "track": "Track",
-      "trackQuestion": "Where is my shipment?",
-      "rates": "Rates",
-      "ratesQuestion": "What are your shipping rates?",
-      "delivery": "Delivery",
-      "deliveryQuestion": "How long does delivery take?",
+      "track": "Project",
+      "trackQuestion": "What is my project status?",
+      "rates": "Services",
+      "ratesQuestion": "What fire protection services do you offer?",
+      "delivery": "Consultation",
+      "deliveryQuestion": "How can I get a free consultation?",
       "contact": "Contact",
       "contactQuestion": "How can I contact you?"
     }
@@ -549,48 +554,48 @@
     "rowsSelected": "row(s) selected"
   },
   "tracking": {
-    "title": "Track Shipment",
-    "publicTitle": "Track Your Shipment",
-    "enterNumber": "Enter tracking number",
+    "title": "Track Project",
+    "publicTitle": "Track Your Project",
+    "enterNumber": "Enter project number",
     "trackButton": "Track",
-    "notFound": "Shipment not found",
-    "invalidNumber": "Invalid tracking number",
+    "notFound": "Project not found",
+    "invalidNumber": "Invalid project number",
     "currentStatus": "Current Status",
-    "estimatedDelivery": "Estimated Delivery",
+    "estimatedDelivery": "Estimated Completion",
     "lastUpdated": "Last Updated",
     "progress": "Progress",
-    "shipmentInfo": "Shipment Information",
-    "trackingNumber": "Tracking Number",
-    "vesselName": "Vessel Name",
-    "containerNumber": "Container Number",
-    "consignee": "Consignee",
-    "copyLink": "Copy Tracking Link",
+    "projectInfo": "Project Information",
+    "trackingNumber": "Project Number",
+    "facilityName": "Facility Name",
+    "projectType": "Project Type",
+    "client": "Client",
+    "copyLink": "Copy Project Link",
     "linkCopied": "Link copied!",
     "stages": {
-      "PRE_ARRIVAL_DOCS": "Pre-Arrival Documents",
-      "VESSEL_ARRIVAL": "Vessel Arrival",
-      "CUSTOMS_DECLARATION": "Customs Declaration",
-      "CUSTOMS_PAYMENT": "Customs Payment",
-      "INSPECTION": "Inspection",
-      "PORT_FEES": "Port Fees",
-      "QUALITY_STANDARDS": "Quality & Standards",
-      "RELEASE": "Release",
-      "LOADING": "Loading",
-      "IN_TRANSIT": "In Transit",
-      "DELIVERED": "Delivered"
+      "CONSULTATION": "Initial Consultation",
+      "SITE_SURVEY": "Site Survey",
+      "DESIGN": "System Design",
+      "CIVIL_DEFENSE_APPROVAL": "Civil Defense Approval",
+      "MATERIAL_PROCUREMENT": "Material Procurement",
+      "INSTALLATION": "Installation",
+      "TESTING": "Testing & Commissioning",
+      "INSPECTION": "Final Inspection",
+      "CERTIFICATION": "Certification",
+      "HANDOVER": "Project Handover",
+      "MAINTENANCE": "Under Maintenance"
     },
     "stageDescriptions": {
-      "PRE_ARRIVAL_DOCS": "Documentation review before vessel arrives",
-      "VESSEL_ARRIVAL": "Vessel has arrived at Port Sudan",
-      "CUSTOMS_DECLARATION": "Customs declaration submitted and processing",
-      "CUSTOMS_PAYMENT": "Customs duties and taxes being paid",
-      "INSPECTION": "Cargo inspection in progress",
-      "PORT_FEES": "Port handling fees being processed",
-      "QUALITY_STANDARDS": "Quality and standards verification",
-      "RELEASE": "Cargo release order issued",
-      "LOADING": "Cargo being loaded for transport",
-      "IN_TRANSIT": "Shipment en route to destination",
-      "DELIVERED": "Shipment delivered successfully"
+      "CONSULTATION": "Initial consultation and requirements gathering",
+      "SITE_SURVEY": "On-site survey and measurements",
+      "DESIGN": "System design and engineering calculations",
+      "CIVIL_DEFENSE_APPROVAL": "Design approval from Civil Defense",
+      "MATERIAL_PROCUREMENT": "Procurement of equipment and materials",
+      "INSTALLATION": "On-site installation in progress",
+      "TESTING": "System testing and commissioning",
+      "INSPECTION": "Final inspection by Civil Defense",
+      "CERTIFICATION": "Certificate issuance",
+      "HANDOVER": "Project handover to client",
+      "MAINTENANCE": "Active maintenance contract"
     },
     "statuses": {
       "PENDING": "Pending",
@@ -605,8 +610,8 @@
       "addNote": "Add Note",
       "markComplete": "Mark Complete",
       "skip": "Skip Stage",
-      "initializeTracking": "Initialize Tracking",
-      "generateNumber": "Generate Tracking Number"
+      "initializeTracking": "Initialize Project",
+      "generateNumber": "Generate Project Number"
     },
     "eta": "ETA",
     "completedAt": "Completed",

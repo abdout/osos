@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Plus } from "lucide-react"
 
-export default async function ShipmentsPage({
+export default async function ProjectsPage({
   params,
 }: {
   params: Promise<{ lang: string }>
@@ -16,11 +16,11 @@ export default async function ShipmentsPage({
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold">{dict.shipments.title}</h1>
+        <h1 className="text-2xl font-bold">{dict.projects.title}</h1>
         <Button asChild>
-          <Link href={`/${lang}/shipments/new`}>
+          <Link href={`/${lang}/projects/new`}>
             <Plus className="h-4 w-4 me-2" />
-            {dict.shipments.newShipment}
+            {dict.projects.newProject}
           </Link>
         </Button>
       </div>

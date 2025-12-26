@@ -105,7 +105,7 @@ export function InvoiceTable({ data, dictionary, locale }: InvoiceTableProps) {
     },
     {
       accessorKey: "status",
-      header: dictionary.shipments.status || "Status",
+      header: dictionary.projects.status || "Status",
       cell: ({ row }) => {
         const status = row.original.status
         const config = statusConfig[status]

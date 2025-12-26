@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Plus } from "lucide-react"
 
-export default async function CustomsPage({
+export default async function CertificatesPage({
   params,
 }: {
   params: Promise<{ lang: string }>
@@ -16,11 +16,11 @@ export default async function CustomsPage({
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold">{dict.customs.title}</h1>
+        <h1 className="text-2xl font-bold">{dict.certificates.title}</h1>
         <Button asChild>
-          <Link href={`/${lang}/customs/new`}>
+          <Link href={`/${lang}/certificates/new`}>
             <Plus className="h-4 w-4 me-2" />
-            {dict.customs.newDeclaration}
+            {dict.certificates.newCertificate}
           </Link>
         </Button>
       </div>

@@ -45,13 +45,13 @@ export function AppSidebar({ dictionary, locale, user, ...props }: AppSidebarPro
       icon: IconDashboard,
     },
     {
-      title: dictionary.navigation.shipments,
-      url: `/${locale}/shipments`,
+      title: dictionary.navigation.projects,
+      url: `/${locale}/projects`,
       icon: IconShip,
     },
     {
-      title: dictionary.navigation.customs,
-      url: `/${locale}/customs`,
+      title: dictionary.navigation.certificates,
+      url: `/${locale}/certificates`,
       icon: IconFileDescription,
     },
     {

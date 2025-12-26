@@ -23,9 +23,9 @@ import type { Dictionary } from "@/components/internationalization"
 interface SectionCardsProps {
   dictionary: Dictionary
   stats: {
-    totalShipments: { value: number; trend: number }
-    inTransit: { value: number; trend: number }
-    pendingCustoms: { value: number; trend: number }
+    totalProjects: { value: number; trend: number }
+    inProgress: { value: number; trend: number }
+    pendingInspection: { value: number; trend: number }
     unpaidInvoices: { value: string; trend: number }
   }
 }
@@ -35,28 +35,28 @@ export function SectionCards({ dictionary, stats }: SectionCardsProps) {
     <div className="*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 px-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-4">
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>{dictionary.dashboard.totalShipments}</CardDescription>
+          <CardDescription>{dictionary.dashboard.totalProjects}</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            {stats.totalShipments.value}
+            {stats.totalProjects.value}
           </CardTitle>
           <CardAction>
             <Badge variant="outline">
-              {stats.totalShipments.trend >= 0 ? (
+              {stats.totalProjects.trend >= 0 ? (
                 <IconTrendingUp className="size-4" />
               ) : (
                 <IconTrendingDown className="size-4" />
               )}
-              {stats.totalShipments.trend >= 0 ? "+" : ""}
-              {stats.totalShipments.trend}%
+              {stats.totalProjects.trend >= 0 ? "+" : ""}
+              {stats.totalProjects.trend}%
             </Badge>
           </CardAction>
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            {stats.totalShipments.trend >= 0
+            {stats.totalProjects.trend >= 0
               ? dictionary.dashboard.trendingUp || "Trending up this month"
               : dictionary.dashboard.trendingDown || "Down this period"}
-            {stats.totalShipments.trend >= 0 ? (
+            {stats.totalProjects.trend >= 0 ? (
               <IconTrendingUp className="size-4" />
             ) : (
               <IconTrendingDown className="size-4" />
@@ -64,35 +64,35 @@ export function SectionCards({ dictionary, stats }: SectionCardsProps) {
           </div>
           <div className="text-muted-foreground flex items-center gap-2">
             <IconShip className="size-4" />
-            {dictionary.navigation.shipments}
+            {dictionary.navigation.projects}
           </div>
         </CardFooter>
       </Card>
 
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>{dictionary.dashboard.inTransit}</CardDescription>
+          <CardDescription>{dictionary.dashboard.inProgress}</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            {stats.inTransit.value}
+            {stats.inProgress.value}
           </CardTitle>
           <CardAction>
             <Badge variant="outline">
-              {stats.inTransit.trend >= 0 ? (
+              {stats.inProgress.trend >= 0 ? (
                 <IconTrendingUp className="size-4" />
               ) : (
                 <IconTrendingDown className="size-4" />
               )}
-              {stats.inTransit.trend >= 0 ? "+" : ""}
-              {stats.inTransit.trend}%
+              {stats.inProgress.trend >= 0 ? "+" : ""}
+              {stats.inProgress.trend}%
             </Badge>
           </CardAction>
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            {stats.inTransit.trend >= 0
+            {stats.inProgress.trend >= 0
               ? dictionary.dashboard.trendingUp || "Trending up this month"
               : dictionary.dashboard.trendingDown || "Down this period"}
-            {stats.inTransit.trend >= 0 ? (
+            {stats.inProgress.trend >= 0 ? (
               <IconTrendingUp className="size-4" />
             ) : (
               <IconTrendingDown className="size-4" />
@@ -100,35 +100,35 @@ export function SectionCards({ dictionary, stats }: SectionCardsProps) {
           </div>
           <div className="text-muted-foreground flex items-center gap-2">
             <IconTruck className="size-4" />
-            {dictionary.shipments.status}
+            {dictionary.projects.status}
           </div>
         </CardFooter>
       </Card>
 
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>{dictionary.dashboard.pendingCustoms}</CardDescription>
+          <CardDescription>{dictionary.dashboard.pendingInspection}</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            {stats.pendingCustoms.value}
+            {stats.pendingInspection.value}
           </CardTitle>
           <CardAction>
             <Badge variant="outline">
-              {stats.pendingCustoms.trend >= 0 ? (
+              {stats.pendingInspection.trend >= 0 ? (
                 <IconTrendingUp className="size-4" />
               ) : (
                 <IconTrendingDown className="size-4" />
               )}
-              {stats.pendingCustoms.trend >= 0 ? "+" : ""}
-              {stats.pendingCustoms.trend}%
+              {stats.pendingInspection.trend >= 0 ? "+" : ""}
+              {stats.pendingInspection.trend}%
             </Badge>
           </CardAction>
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            {stats.pendingCustoms.trend <= 0
+            {stats.pendingInspection.trend <= 0
               ? dictionary.dashboard.trendingUp || "Processing smoothly"
               : dictionary.dashboard.trendingDown || "Needs attention"}
-            {stats.pendingCustoms.trend <= 0 ? (
+            {stats.pendingInspection.trend <= 0 ? (
               <IconTrendingUp className="size-4" />
             ) : (
               <IconTrendingDown className="size-4" />
@@ -136,7 +136,7 @@ export function SectionCards({ dictionary, stats }: SectionCardsProps) {
           </div>
           <div className="text-muted-foreground flex items-center gap-2">
             <IconFileDescription className="size-4" />
-            {dictionary.navigation.customs}
+            {dictionary.navigation.certificates}
           </div>
         </CardFooter>
       </Card>
