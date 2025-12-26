@@ -18,35 +18,40 @@ interface FooterProps {
   lang: string;
 }
 
+interface FooterLink {
+  label: string;
+  href: string;
+}
+
 export function Footer({ dictionary, lang }: FooterProps) {
   const { footer } = dictionary.marketing;
 
-  const productLinks = [
-    footer.links.home,
-    footer.links.features,
-    footer.links.tracking,
-    footer.links.solutions,
-    footer.links.pricing,
-    footer.contact,
+  const productLinks: FooterLink[] = [
+    { label: footer.links.home, href: `/${lang}` },
+    { label: footer.links.features, href: `/${lang}#services` },
+    { label: footer.links.tracking, href: `/${lang}/dashboard` },
+    { label: footer.links.solutions, href: `/${lang}#solutions` },
+    { label: footer.links.pricing, href: `/${lang}#pricing` },
+    { label: footer.contact, href: `/${lang}/about` },
   ];
 
-  const companyLinks = [
-    footer.links.about,
-    footer.links.careers,
-    footer.links.blog,
+  const companyLinks: FooterLink[] = [
+    { label: footer.links.about, href: `/${lang}/about` },
+    { label: footer.links.careers, href: `/${lang}/about` },
+    { label: footer.links.blog, href: `/${lang}/blog` },
   ];
 
-  const serviceLinks = [
-    footer.links.import,
-    footer.links.export,
-    footer.links.warehouse,
-    footer.links.transport,
+  const serviceLinks: FooterLink[] = [
+    { label: footer.links.import, href: `/${lang}#services` },
+    { label: footer.links.export, href: `/${lang}#services` },
+    { label: footer.links.warehouse, href: `/${lang}#services` },
+    { label: footer.links.transport, href: `/${lang}#services` },
   ];
 
-  const supportLinks = [
-    footer.links.helpCenter,
-    footer.links.documentation,
-    footer.links.status,
+  const supportLinks: FooterLink[] = [
+    { label: footer.links.helpCenter, href: `/${lang}/about` },
+    { label: footer.links.documentation, href: `/${lang}/about` },
+    { label: footer.links.status, href: `/${lang}/about` },
   ];
 
   return (
@@ -78,9 +83,9 @@ export function Footer({ dictionary, lang }: FooterProps) {
               <ul className="space-y-3">
                 {productLinks.map((item, index) => (
                   <li key={index}>
-                    <a href="#" className="text-base text-white/70 hover:text-white transition-colors">
-                      {item}
-                    </a>
+                    <Link href={item.href} className="text-base text-white/70 hover:text-white transition-colors">
+                      {item.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -92,9 +97,9 @@ export function Footer({ dictionary, lang }: FooterProps) {
               <ul className="space-y-3">
                 {companyLinks.map((item, index) => (
                   <li key={index}>
-                    <a href="#" className="text-base text-white/70 hover:text-white transition-colors">
-                      {item}
-                    </a>
+                    <Link href={item.href} className="text-base text-white/70 hover:text-white transition-colors">
+                      {item.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -106,9 +111,9 @@ export function Footer({ dictionary, lang }: FooterProps) {
               <ul className="space-y-3">
                 {serviceLinks.map((item, index) => (
                   <li key={index}>
-                    <a href="#" className="text-base text-white/70 hover:text-white transition-colors">
-                      {item}
-                    </a>
+                    <Link href={item.href} className="text-base text-white/70 hover:text-white transition-colors">
+                      {item.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -120,9 +125,9 @@ export function Footer({ dictionary, lang }: FooterProps) {
               <ul className="space-y-3">
                 {supportLinks.map((item, index) => (
                   <li key={index}>
-                    <a href="#" className="text-base text-white/70 hover:text-white transition-colors">
-                      {item}
-                    </a>
+                    <Link href={item.href} className="text-base text-white/70 hover:text-white transition-colors">
+                      {item.label}
+                    </Link>
                   </li>
                 ))}
               </ul>

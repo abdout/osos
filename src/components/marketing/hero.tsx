@@ -1,8 +1,11 @@
 'use client'
 
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { Search } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Dictionary } from '@/components/internationalization/types'
+import { useLocale } from '@/components/internationalization'
 
 interface HeroProps {
   dictionary: Dictionary
@@ -10,6 +13,21 @@ interface HeroProps {
 
 export function Hero({ dictionary }: HeroProps) {
   const { hero } = dictionary.marketing
+  const { locale } = useLocale()
+  const router = useRouter()
+  const [trackingNumber, setTrackingNumber] = useState('')
+
+  const handleTrack = () => {
+    if (trackingNumber.trim()) {
+      router.push(`/${locale}/track/${trackingNumber.trim()}`)
+    }
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleTrack()
+    }
+  }
 
   return (
     <section className="relative h-screen">
@@ -49,11 +67,15 @@ export function Hero({ dictionary }: HeroProps) {
           <div className="relative inline-flex items-center">
             <input
               type="text"
+              value={trackingNumber}
+              onChange={(e) => setTrackingNumber(e.target.value)}
+              onKeyDown={handleKeyDown}
               placeholder={hero.trackPlaceholder}
               className="h-12 w-80 ps-5 pe-28 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
             />
             <Button
               size="sm"
+              onClick={handleTrack}
               className="absolute end-1.5 bg-blue-500 hover:bg-blue-600 text-white font-medium h-9 px-5 gap-1.5 rounded-full"
             >
               <Search className="w-4 h-4" />
