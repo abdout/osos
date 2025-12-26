@@ -486,6 +486,32 @@
         "phone": "+249 123 456 789",
         "email": "info@mazin.sd"
       }
+    },
+    "gas": {
+      "subtitle": "Next-Generation Shipping",
+      "title": "3GS Container Solutions",
+      "description": "Experience the future of global logistics with our intelligent container management system. From port to destination, we ensure your cargo travels safely and efficiently.",
+      "features": {
+        "global": {
+          "title": "Global Reach",
+          "description": "Seamless logistics across 150+ countries with real-time tracking"
+        },
+        "smart": {
+          "title": "Smart Containers",
+          "description": "IoT-enabled containers with temperature and humidity monitoring"
+        },
+        "fast": {
+          "title": "Fast Clearance",
+          "description": "Automated customs processing reduces delays by 70%"
+        }
+      },
+      "stats": {
+        "containers": "50K+",
+        "containersLabel": "Containers Shipped",
+        "delivery": "99.8%",
+        "deliveryLabel": "On-Time Delivery"
+      },
+      "cta": "Explore Our Fleet"
     }
   },
   "chatbot": {

@@ -5,6 +5,7 @@ import { Hero } from './hero'
 import { Partners } from './partners'
 import { Services } from './services'
 import { AllInOne } from './all-in-one'
+import { GasSection } from './gas'
 import { NumberSection } from './number'
 import { TeamPage } from './board'
 import { Insights } from './insights'
@@ -27,6 +28,7 @@ export async function MarketingContent({ dictionary, lang }: MarketingContentPro
         <Partners />
         <Services dictionary={dictionary} />
         <AllInOne dictionary={dictionary} />
+        <GasSection dictionary={dictionary} />
         <NumberSection />
         <TeamPage />
         <Insights dictionary={dictionary} lang={lang} />

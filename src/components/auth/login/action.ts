@@ -2,6 +2,7 @@
 
 import * as z from "zod";
 import { AuthError } from "next-auth";
+import { isRedirectError } from "next/dist/client/components/redirect-error";
 import { LoginSchema } from "@/components/auth/validation";
 import { getUserByEmail } from "@/components/auth/user";
 import { getTwoFactorTokenByEmail } from "@/components/auth/verification/2f-token";
@@ -100,6 +101,11 @@ export const login = async (
       redirectTo: callbackUrl || DEFAULT_LOGIN_REDIRECT,
     })
   } catch (error) {
+    // Re-throw redirect errors first (they're expected for successful login)
+    if (isRedirectError(error)) {
+      throw error;
+    }
+
     if (error instanceof AuthError) {
       switch (error.type) {
         case "CredentialsSignin":
@@ -109,6 +115,8 @@ export const login = async (
       }
     }
 
-    throw error;
+    return { error: "Something went wrong!" };
   }
+
+  return { success: "Logged in!" };
 };

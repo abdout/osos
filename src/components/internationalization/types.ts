@@ -378,6 +378,23 @@ export interface Dictionary {
         email: string
       }
     }
+    gas: {
+      subtitle: string
+      title: string
+      description: string
+      features: {
+        global: { title: string; description: string }
+        smart: { title: string; description: string }
+        fast: { title: string; description: string }
+      }
+      stats: {
+        containers: string
+        containersLabel: string
+        delivery: string
+        deliveryLabel: string
+      }
+      cta: string
+    }
   }
   chatbot: {
     openChat: string
