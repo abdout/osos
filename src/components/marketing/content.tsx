@@ -1,21 +1,24 @@
 import { Dictionary } from '@/components/internationalization/types'
+import type { Locale } from '@/components/internationalization/config'
 import { SiteHeader } from '@/components/template/site-header'
 import { Hero } from './hero'
 import { Partners } from './partners'
 import { Services } from './services'
-import { Testimonial } from './testimonial'
-import { Solutions } from './solutions'
 import { AllInOne } from './all-in-one'
+import { NumberSection } from './number'
+import { TeamPage } from './board'
 import { Insights } from './insights'
 import { Faq } from './faq'
+import ReadyToBuildSection from './ready-to-build'
 import { Footer } from './footer'
+import { Chatbot } from '@/components/chatbot'
 
 interface MarketingContentProps {
   dictionary: Dictionary
   lang: string
 }
 
-export function MarketingContent({ dictionary, lang }: MarketingContentProps) {
+export async function MarketingContent({ dictionary, lang }: MarketingContentProps) {
   return (
     <>
       <SiteHeader dictionary={dictionary} />
@@ -23,13 +26,15 @@ export function MarketingContent({ dictionary, lang }: MarketingContentProps) {
         <Hero dictionary={dictionary} />
         <Partners />
         <Services dictionary={dictionary} />
-        <Testimonial dictionary={dictionary} />
-        <Solutions dictionary={dictionary} />
         <AllInOne dictionary={dictionary} />
+        <NumberSection />
+        <TeamPage />
         <Insights dictionary={dictionary} lang={lang} />
-        <Faq dictionary={dictionary} />
+        <Faq dictionary={dictionary} lang={lang} />
+        <ReadyToBuildSection dictionary={dictionary} />
       </main>
       <Footer dictionary={dictionary} lang={lang} />
+      <Chatbot lang={lang as Locale} />
     </>
   )
 }

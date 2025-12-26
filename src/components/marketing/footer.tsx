@@ -1,124 +1,204 @@
 'use client'
 
-import Link from 'next/link'
-import { MapPin, Phone, Mail } from 'lucide-react'
-import { Dictionary } from '@/components/internationalization/types'
+import React from "react";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import {
+  GitHubNewIcon,
+  TwitterIcon,
+  LinkedInNewIcon,
+  InstagramIcon,
+  FacebookIcon,
+  WhatsAppIcon,
+} from "@/components/atom/icons";
+import { Dictionary } from "@/components/internationalization/types";
+import Link from "next/link";
 
 interface FooterProps {
-  dictionary: Dictionary
-  lang: string
+  dictionary: Dictionary;
+  lang: string;
 }
 
 export function Footer({ dictionary, lang }: FooterProps) {
-  const { footer } = dictionary.marketing
-  const currentYear = new Date().getFullYear()
+  const { footer } = dictionary.marketing;
+
+  const productLinks = [
+    footer.links.home,
+    footer.links.features,
+    footer.links.tracking,
+    footer.links.solutions,
+    footer.links.pricing,
+    footer.contact,
+  ];
+
+  const companyLinks = [
+    footer.links.about,
+    footer.links.careers,
+    footer.links.blog,
+  ];
+
+  const serviceLinks = [
+    footer.links.import,
+    footer.links.export,
+    footer.links.warehouse,
+    footer.links.transport,
+  ];
+
+  const supportLinks = [
+    footer.links.helpCenter,
+    footer.links.documentation,
+    footer.links.status,
+  ];
 
   return (
-    <footer className="bg-[#0f172a] text-white">
-      <div className="py-16" style={{ paddingInline: 'var(--container-padding)' }}>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <Link href={`/${lang}`} className="text-2xl font-bold mb-4 block">
-              {dictionary.common.appName}
+    <footer className="bg-[oklch(0.145_0_0)] text-[oklch(0.97_0_0)]">
+      <div className="layout-container py-20 md:py-28">
+        {/* Main Footer Content */}
+        <div className="flex flex-col md:flex-row gap-12 md:gap-10">
+          {/* Logo & Description */}
+          <div className="md:w-1/4">
+            <Link href={`/${lang}`} className="inline-block mb-5">
+              <OptimizedImage
+                src="/logo.png"
+                alt={dictionary.common.appName}
+                width={160}
+                height={50}
+                className="h-12 w-auto invert"
+              />
             </Link>
-            <p className="text-white/60 text-sm leading-relaxed">
+            <p className="text-base text-white/70 leading-relaxed max-w-[280px]">
               {footer.description}
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold mb-4">{footer.quickLinks}</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href={`/${lang}`} className="text-white/60 hover:text-white text-sm transition-colors">
-                  {footer.links.home}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}#features`} className="text-white/60 hover:text-white text-sm transition-colors">
-                  {footer.links.features}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}#tracking`} className="text-white/60 hover:text-white text-sm transition-colors">
-                  {footer.links.tracking}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}#solutions`} className="text-white/60 hover:text-white text-sm transition-colors">
-                  {footer.links.solutions}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}#pricing`} className="text-white/60 hover:text-white text-sm transition-colors">
-                  {footer.links.pricing}
-                </Link>
-              </li>
-            </ul>
+          {/* Links Grid */}
+          <div className="flex-1 grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
+            {/* Quick Links */}
+            <div>
+              <h3 className="font-semibold text-white mb-5">{footer.quickLinks}</h3>
+              <ul className="space-y-3">
+                {productLinks.map((item, index) => (
+                  <li key={index}>
+                    <a href="#" className="text-base text-white/70 hover:text-white transition-colors">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div>
+              <h3 className="font-semibold text-white mb-5">{footer.company}</h3>
+              <ul className="space-y-3">
+                {companyLinks.map((item, index) => (
+                  <li key={index}>
+                    <a href="#" className="text-base text-white/70 hover:text-white transition-colors">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h3 className="font-semibold text-white mb-5">{footer.services}</h3>
+              <ul className="space-y-3">
+                {serviceLinks.map((item, index) => (
+                  <li key={index}>
+                    <a href="#" className="text-base text-white/70 hover:text-white transition-colors">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Support */}
+            <div>
+              <h3 className="font-semibold text-white mb-5">{footer.contact}</h3>
+              <ul className="space-y-3">
+                {supportLinks.map((item, index) => (
+                  <li key={index}>
+                    <a href="#" className="text-base text-white/70 hover:text-white transition-colors">
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="font-semibold mb-4">{footer.services}</h3>
-            <ul className="space-y-3">
-              <li>
-                <Link href={`/${lang}/services/import`} className="text-white/60 hover:text-white text-sm transition-colors">
-                  {footer.links.import}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}/services/export`} className="text-white/60 hover:text-white text-sm transition-colors">
-                  {footer.links.export}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}/services/warehouse`} className="text-white/60 hover:text-white text-sm transition-colors">
-                  {footer.links.warehouse}
-                </Link>
-              </li>
-              <li>
-                <Link href={`/${lang}/services/transport`} className="text-white/60 hover:text-white text-sm transition-colors">
-                  {footer.links.transport}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="font-semibold mb-4">{footer.contact}</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-white/60 flex-shrink-0 mt-0.5" />
-                <span className="text-white/60 text-sm">{footer.contactInfo.address}</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-white/60 flex-shrink-0" />
-                <a href={`tel:${footer.contactInfo.phone}`} className="text-white/60 hover:text-white text-sm transition-colors">
-                  {footer.contactInfo.phone}
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-white/60 flex-shrink-0" />
-                <a href={`mailto:${footer.contactInfo.email}`} className="text-white/60 hover:text-white text-sm transition-colors">
-                  {footer.contactInfo.email}
-                </a>
-              </li>
-            </ul>
+          {/* Newsletter Section */}
+          <div className="md:w-1/4">
+            <h3 className="font-semibold text-white mb-5">{footer.newsletter.title}</h3>
+            <p className="text-sm text-white/60 mb-4">{footer.newsletter.description}</p>
+            <form className="relative inline-flex items-center mb-6 w-full" onSubmit={(e) => e.preventDefault()}>
+              <input
+                type="email"
+                placeholder={footer.newsletter.placeholder}
+                className="h-12 w-full ps-5 pe-28 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder:text-white/50 text-sm focus:outline-none focus:ring-2 focus:ring-white/40 focus:border-transparent"
+              />
+              <button
+                type="submit"
+                className="absolute end-1.5 bg-white hover:bg-white/90 text-black font-medium h-9 px-5 rounded-full text-sm transition-colors"
+              >
+                {footer.newsletter.button}
+              </button>
+            </form>
+            {/* Social Icons */}
+            <div className="flex items-center gap-5">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-transform hover:scale-110"
+              >
+                <GitHubNewIcon className="h-8 w-8 text-white/70 hover:text-white transition-colors" />
+              </a>
+              <a href="#" className="transition-transform hover:scale-110">
+                <TwitterIcon className="h-8 w-8 text-white/70 hover:text-white transition-colors" />
+              </a>
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-transform hover:scale-110"
+              >
+                <LinkedInNewIcon className="h-8 w-8 text-white/70 hover:text-white transition-colors" />
+              </a>
+              <a href="#" className="transition-transform hover:scale-110">
+                <InstagramIcon className="h-8 w-8 text-white/70 hover:text-white transition-colors" />
+              </a>
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-transform hover:scale-110"
+              >
+                <FacebookIcon className="h-8 w-8 text-white/70 hover:text-white transition-colors" />
+              </a>
+              <a
+                href={`https://wa.me/${footer.contactInfo.phone.replace(/[^0-9+]/g, '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-transform hover:scale-110"
+              >
+                <WhatsAppIcon className="h-8 w-8 text-white/70 hover:text-white transition-colors" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Copyright */}
       <div className="border-t border-white/10">
-        <div className="py-6" style={{ paddingInline: 'var(--container-padding)' }}>
-          <p className="text-center text-white/40 text-sm">
-            &copy; {currentYear} {dictionary.common.appName}. {footer.copyright}
+        <div className="layout-container py-6">
+          <p className="text-start text-white/50 text-sm">
+            &copy; {new Date().getFullYear()} {dictionary.common.appName}. {footer.copyright}
           </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }

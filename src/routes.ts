@@ -9,6 +9,20 @@
  */
 export const publicRoutes = [
   "/",
+  "/new-verification",
+  // Marketing pages
+  "/about",
+  "/services",
+  "/contact",
+  // Internationalized routes
+  "/en",
+  "/en/about",
+  "/en/services",
+  "/en/contact",
+  "/ar",
+  "/ar/about",
+  "/ar/services",
+  "/ar/contact",
 ]
 
 /**
@@ -19,8 +33,21 @@ export const publicRoutes = [
 export const authRoutes = [
   "/login",
   "/register",
+  "/join",
   "/error",
-  "/reset-password",
+  "/reset",
+  "/new-password",
+  // Internationalized auth routes
+  "/en/login",
+  "/en/join",
+  "/en/error",
+  "/en/reset",
+  "/en/new-password",
+  "/ar/login",
+  "/ar/join",
+  "/ar/error",
+  "/ar/reset",
+  "/ar/new-password",
 ]
 
 /**

@@ -31,12 +31,13 @@ export function Hero({ dictionary }: HeroProps) {
         <div className="max-w-lg">
           {/* Badge */}
           <span className="inline-block text-xs font-semibold tracking-wider text-white/80 uppercase mb-4">
-            CUSTOMS CLEARANCE SERVICES
+            {hero.badge}
           </span>
 
           {/* Title */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.1] mb-6">
-            Precision in<br /><span className="whitespace-nowrap">Every Shipment</span>
+            <span className="block">{hero.titleLine1}</span>
+            <span className="block whitespace-nowrap">{hero.titleLine2}</span>
           </h1>
 
           {/* Subtitle */}
@@ -49,14 +50,14 @@ export function Hero({ dictionary }: HeroProps) {
             <input
               type="text"
               placeholder={hero.trackPlaceholder}
-              className="h-12 w-80 pl-5 pr-28 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-[#0ea5e9] focus:border-transparent"
+              className="h-12 w-80 ps-5 pe-28 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
             />
             <Button
               size="sm"
-              className="absolute right-1.5 bg-blue-500 hover:bg-blue-600 text-white font-medium h-9 px-5 gap-1.5 rounded-full"
+              className="absolute end-1.5 bg-blue-500 hover:bg-blue-600 text-white font-medium h-9 px-5 gap-1.5 rounded-full"
             >
               <Search className="w-4 h-4" />
-              Track
+              {hero.trackButton}
             </Button>
           </div>
         </div>

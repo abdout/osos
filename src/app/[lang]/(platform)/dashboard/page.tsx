@@ -1,7 +1,9 @@
 import { getDictionary } from "@/components/internationalization/dictionaries"
 import type { Locale } from "@/components/internationalization"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Ship, Truck, FileText, Receipt } from "lucide-react"
+import { auth } from "@/auth"
+import { db } from "@/lib/db"
+import { SectionCards } from "@/components/platform/dashboard/section-cards"
+import { QuickActions } from "@/components/platform/dashboard/quick-actions"
 
 export default async function DashboardPage({
   params,
@@ -11,80 +13,53 @@ export default async function DashboardPage({
   const { lang: langParam } = await params
   const lang = langParam as Locale
   const dict = await getDictionary(lang)
+  const session = await auth()
 
-  const stats = [
-    {
-      title: dict.dashboard.totalShipments,
-      value: "0",
-      icon: Ship,
+  // Fetch stats from database
+  const [
+    totalShipments,
+    inTransit,
+    pendingCustoms,
+    unpaidInvoicesResult,
+  ] = await Promise.all([
+    db.shipment.count({
+      where: { userId: session?.user?.id },
+    }),
+    db.shipment.count({
+      where: { userId: session?.user?.id, status: "IN_TRANSIT" },
+    }),
+    db.customsDeclaration.count({
+      where: {
+        userId: session?.user?.id,
+        status: { in: ["DRAFT", "SUBMITTED", "UNDER_REVIEW"] },
+      },
+    }),
+    db.invoice.aggregate({
+      where: {
+        userId: session?.user?.id,
+        status: { notIn: ["PAID", "CANCELLED"] },
+      },
+      _sum: { total: true },
+    }),
+  ])
+
+  const unpaidTotal = Number(unpaidInvoicesResult._sum.total || 0)
+
+  const stats = {
+    totalShipments: { value: totalShipments, trend: 12 },
+    inTransit: { value: inTransit, trend: 5 },
+    pendingCustoms: { value: pendingCustoms, trend: -3 },
+    unpaidInvoices: {
+      value: `SDG ${unpaidTotal.toLocaleString()}`,
+      trend: 8,
     },
-    {
-      title: dict.dashboard.inTransit,
-      value: "0",
-      icon: Truck,
-    },
-    {
-      title: dict.dashboard.pendingCustoms,
-      value: "0",
-      icon: FileText,
-    },
-    {
-      title: dict.dashboard.unpaidInvoices,
-      value: "SDG 0",
-      icon: Receipt,
-    },
-  ]
+  }
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold">{dict.dashboard.title}</h1>
-      </div>
-
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        {stats.map((stat) => (
-          <Card key={stat.title}>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">
-                {stat.title}
-              </CardTitle>
-              <stat.icon className="h-4 w-4 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{stat.value}</div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-
-      <div className="grid gap-4 md:grid-cols-2">
-        <Card>
-          <CardHeader>
-            <CardTitle>{dict.dashboard.recentShipments}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-muted-foreground text-sm">
-              {dict.common.noResults}
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>{dict.dashboard.quickActions}</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <p className="text-muted-foreground text-sm">
-              {dict.dashboard.newShipment}
-            </p>
-            <p className="text-muted-foreground text-sm">
-              {dict.dashboard.newDeclaration}
-            </p>
-            <p className="text-muted-foreground text-sm">
-              {dict.dashboard.newInvoice}
-            </p>
-          </CardContent>
-        </Card>
+    <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
+      <SectionCards dictionary={dict} stats={stats} />
+      <div className="px-4 lg:px-6">
+        <QuickActions dictionary={dict} locale={lang} />
       </div>
     </div>
   )

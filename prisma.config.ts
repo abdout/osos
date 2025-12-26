@@ -4,8 +4,21 @@ import { defineConfig } from "prisma/config"
 
 dotenv.config()
 
+/**
+ * Prisma Configuration (v7+)
+ *
+ * Multi-File Schema Setup:
+ * - Points to the `prisma` directory (not a single file) to enable multi-schema support
+ * - All *.prisma files in prisma/models/ are automatically included
+ * - Main schema.prisma defines datasource and generator blocks
+ *
+ * Configuration Structure:
+ * - schema.prisma: Datasource and generator configuration
+ * - prisma/models/*.prisma: Model files with business logic
+ */
 export default defineConfig({
-  schema: path.join(__dirname, "prisma/schema.prisma"),
+  // Multi-file schema support - points to the prisma directory
+  schema: path.join(__dirname, "prisma"),
 
   migrate: {
     adapter: async () => {

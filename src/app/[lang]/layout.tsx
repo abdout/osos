@@ -1,3 +1,4 @@
+import { SessionProvider } from "next-auth/react"
 import { i18n, type Locale, localeConfig } from "@/components/internationalization"
 import { ThemeProvider } from "@/components/providers"
 import { fontSans, fontRubik, fontVariables } from "@/components/atom/fonts"
@@ -25,14 +26,16 @@ export default async function RootLayout({
   return (
     <html lang={lang} dir={dir} suppressHydrationWarning>
       <body className={cn(fontClass, fontVariables, "antialiased")}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <SessionProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </SessionProvider>
       </body>
     </html>
   )

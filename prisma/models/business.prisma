@@ -1,0 +1,239 @@
+// Business Models
+// This file contains all models related to shipments, invoices, and customs
+
+// ============================================
+// Shipment Models
+// ============================================
+
+model Shipment {
+  id             String         @id @default(cuid())
+  shipmentNumber String         @unique
+  trackingNumber String?        @unique // Public tracking number (TRK-XXXXXX)
+  type           ShipmentType
+  status         ShipmentStatus @default(PENDING)
+
+  // Cargo details
+  description     String
+  weight          Decimal?       @db.Decimal(10, 2)
+  quantity        Int?
+  containerNumber String?
+  vesselName      String?
+
+  // Parties
+  consignor String // Shipper
+  consignee String // Receiver
+
+  // Dates
+  arrivalDate   DateTime?
+  departureDate DateTime?
+
+  // Relations
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  declarations   CustomsDeclaration[]
+  invoices       Invoice[]
+  trackingStages TrackingStage[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([shipmentNumber])
+  @@index([trackingNumber])
+  @@index([status])
+  @@index([userId])
+  @@index([createdAt])
+  @@map("shipments")
+}
+
+enum ShipmentType {
+  IMPORT
+  EXPORT
+}
+
+enum ShipmentStatus {
+  PENDING
+  IN_TRANSIT
+  ARRIVED
+  CLEARED
+  DELIVERED
+}
+
+// ============================================
+// Customs Models
+// ============================================
+
+model CustomsDeclaration {
+  id            String            @id @default(cuid())
+  declarationNo String            @unique
+  status        DeclarationStatus @default(DRAFT)
+
+  hsCode     String?
+  dutyAmount Decimal? @db.Decimal(15, 2)
+  taxAmount  Decimal? @db.Decimal(15, 2)
+  currency   String   @default("SDG")
+  notes      String?
+
+  // Relations
+  shipmentId String
+  shipment   Shipment @relation(fields: [shipmentId], references: [id])
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  documents Document[]
+
+  approvedAt DateTime?
+  approvedBy String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([declarationNo])
+  @@index([status])
+  @@index([shipmentId])
+  @@map("customs_declarations")
+}
+
+enum DeclarationStatus {
+  DRAFT
+  SUBMITTED
+  UNDER_REVIEW
+  APPROVED
+  REJECTED
+}
+
+model Document {
+  id       String       @id @default(cuid())
+  fileName String
+  fileUrl  String
+  fileType DocumentType
+  fileSize Int?
+
+  declarationId String
+  declaration   CustomsDeclaration @relation(fields: [declarationId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("documents")
+}
+
+enum DocumentType {
+  BILL_OF_LADING
+  COMMERCIAL_INVOICE
+  PACKING_LIST
+  CERTIFICATE_OF_ORIGIN
+  INSURANCE_CERTIFICATE
+  OTHER
+}
+
+// ============================================
+// Invoice Models
+// ============================================
+
+model Invoice {
+  id            String        @id @default(cuid())
+  invoiceNumber String        @unique
+  status        InvoiceStatus @default(DRAFT)
+
+  currency String  @default("SDG")
+  subtotal Decimal @db.Decimal(15, 2)
+  tax      Decimal @default(0) @db.Decimal(15, 2)
+  total    Decimal @db.Decimal(15, 2)
+
+  dueDate DateTime?
+  paidAt  DateTime?
+  notes   String?
+
+  // Relations
+  shipmentId String?
+  shipment   Shipment? @relation(fields: [shipmentId], references: [id])
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  items InvoiceItem[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([invoiceNumber])
+  @@index([status])
+  @@index([userId])
+  @@map("invoices")
+}
+
+enum InvoiceStatus {
+  DRAFT
+  SENT
+  PAID
+  OVERDUE
+  CANCELLED
+}
+
+model InvoiceItem {
+  id          String  @id @default(cuid())
+  description String
+  quantity    Int     @default(1)
+  unitPrice   Decimal @db.Decimal(15, 2)
+  total       Decimal @db.Decimal(15, 2)
+
+  invoiceId String
+  invoice   Invoice @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("invoice_items")
+}
+
+// ============================================
+// Tracking Models
+// ============================================
+
+model TrackingStage {
+  id         String              @id @default(cuid())
+  shipmentId String
+  shipment   Shipment            @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+  stageType  TrackingStageType
+  status     TrackingStageStatus @default(PENDING)
+
+  // Timestamps
+  startedAt   DateTime? // When stage was started
+  completedAt DateTime? // When stage was completed
+  estimatedAt DateTime? // ETA for this stage
+
+  // Metadata
+  notes       String? // Staff notes for this stage
+  updatedById String? // User who last updated this stage
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([shipmentId, stageType])
+  @@index([shipmentId])
+  @@index([status])
+  @@map("tracking_stages")
+}
+
+enum TrackingStageType {
+  PRE_ARRIVAL_DOCS
+  VESSEL_ARRIVAL
+  CUSTOMS_DECLARATION
+  CUSTOMS_PAYMENT
+  INSPECTION
+  PORT_FEES
+  QUALITY_STANDARDS
+  RELEASE
+  LOADING
+  IN_TRANSIT
+  DELIVERED
+}
+
+enum TrackingStageStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  SKIPPED
+}

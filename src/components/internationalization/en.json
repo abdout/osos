@@ -23,16 +23,16 @@
     "optional": "Optional",
     "success": "Success",
     "error": "Error occurred",
-    "warning": "Warning"
+    "warning": "Warning",
+    "view": "View",
+    "select": "Select",
+    "createdAt": "Created"
   },
   "header": {
-    "home": "Home",
-    "features": "Features",
-    "tracking": "Tracking",
-    "solutions": "Solutions",
-    "pricing": "Pricing",
-    "contact": "Contact",
-    "faq": "FAQs",
+    "services": "Services",
+    "blog": "Blog",
+    "about": "About",
+    "platform": "Platform",
     "signUp": "Sign Up",
     "login": "Login"
   },
@@ -43,17 +43,64 @@
     "invoices": "Invoices",
     "settings": "Settings",
     "users": "Users",
-    "logout": "Logout"
+    "logout": "Logout",
+    "help": "Help"
   },
   "auth": {
     "login": "Login",
     "logout": "Logout",
     "email": "Email",
     "password": "Password",
+    "name": "Name",
     "forgotPassword": "Forgot password?",
     "loginButton": "Sign In",
     "invalidCredentials": "Invalid credentials",
-    "welcomeBack": "Welcome back"
+    "welcomeBack": "Welcome back",
+    "loginDescription": "Sign in to your account",
+    "signUp": "Sign Up",
+    "createAccount": "Create Account",
+    "signUpDescription": "Sign up to get started",
+    "dontHaveAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?",
+    "orContinueWith": "Or continue with",
+    "confirm": "Confirm",
+    "twoFactorCode": "Two-Factor Code",
+    "twoFactorDescription": "Enter the code sent to your email",
+    "resetPassword": "Reset Password",
+    "resetDescription": "Enter your email to receive reset instructions",
+    "newPassword": "New Password",
+    "newPasswordDescription": "Enter your new password",
+    "confirmPassword": "Confirm Password",
+    "sendResetLink": "Send Reset Link",
+    "backToLogin": "Back to login",
+    "confirmEmail": "Confirm Your Email",
+    "confirmEmailDescription": "Confirming your email address...",
+    "emailVerified": "Email verified! You can now login.",
+    "verifyingEmail": "Verifying your email...",
+    "enterEmail": "Enter your email",
+    "enterPassword": "Enter your password",
+    "enterName": "Enter your name",
+    "providers": {
+      "google": "Google",
+      "facebook": "Facebook"
+    },
+    "errors": {
+      "emailInUseProvider": "Email already in use with different provider!",
+      "somethingWrong": "Something went wrong!",
+      "emailNotVerified": "Please verify your email first",
+      "invalidCode": "Invalid code",
+      "expiredCode": "Code has expired",
+      "userNotFound": "User not found",
+      "invalidToken": "Invalid token",
+      "expiredToken": "Token has expired",
+      "passwordRequired": "Password is required"
+    },
+    "success": {
+      "emailSent": "Email sent! Check your inbox.",
+      "passwordReset": "Password updated successfully!",
+      "accountCreated": "Account created! Please check your email.",
+      "confirmationSent": "Confirmation email sent!"
+    }
   },
   "dashboard": {
     "title": "Dashboard",
@@ -65,7 +112,9 @@
     "quickActions": "Quick Actions",
     "newShipment": "New Shipment",
     "newDeclaration": "New Declaration",
-    "newInvoice": "New Invoice"
+    "newInvoice": "New Invoice",
+    "trendingUp": "Trending up this month",
+    "trendingDown": "Down this period"
   },
   "shipments": {
     "title": "Shipments",
@@ -135,6 +184,7 @@
     "newInvoice": "New Invoice",
     "editInvoice": "Edit Invoice",
     "invoiceDetails": "Invoice Details",
+    "details": "Invoice Details",
     "invoiceNumber": "Invoice Number",
     "subtotal": "Subtotal",
     "tax": "Tax",
@@ -145,6 +195,7 @@
     "addItem": "Add Item",
     "itemDescription": "Item Description",
     "unitPrice": "Unit Price",
+    "notes": "Notes",
     "downloadPdf": "Download PDF",
     "markAsPaid": "Mark as Paid",
     "markAsSent": "Mark as Sent",
@@ -192,13 +243,63 @@
     "invalidNumber": "Must be a valid number",
     "positiveNumber": "Must be a positive number"
   },
+  "about": {
+    "sections": {
+      "who": {
+        "subtitle": "W h o   W e   A r e",
+        "title": "Who We Are",
+        "description": "Established in 1985, Abdout was founded with the goal of supporting and developing the local community by providing exceptional customs clearance and logistics services that enhance trade efficiency and meet business needs transparently. Since our establishment, we have been committed to building a service system based on reliability, expertise, and sustainable business practices."
+      },
+      "why": {
+        "subtitle": "W h y   U s",
+        "title": "Why Us",
+        "description": "We believe that efficient logistics is the foundation for successful trade. With our dedication to offering high-quality services that reflect the aspirations of businesses, we meet growing needs efficiently. Our commitment to transparency, professional values, and sustainable practices makes us the trusted choice for customs clearance services in Port Sudan."
+      },
+      "mission": {
+        "subtitle": "O u r   M i s s i o n",
+        "title": "Our Vision and Mission",
+        "description": "To provide an effective logistics environment that supports businesses, offers reliable services, and launches developmental initiatives and strategic partnerships that enhance trade efficiency and economic growth. We strive to be the leading customs clearance company that promotes seamless international trade."
+      }
+    },
+    "goals": [
+      {
+        "title": "Business Support",
+        "description": "Building strong business relationships through reliable services that support importers and exporters in achieving their goals."
+      },
+      {
+        "title": "Quality Services",
+        "description": "Delivering reliable, high-quality customs clearance and logistics services that meet the evolving needs of our clients with transparency and efficiency."
+      },
+      {
+        "title": "Sustainable Growth",
+        "description": "Implementing sustainable business practices that ensure long-term growth and prosperity for our company and clients."
+      }
+    ],
+    "boardOfDirectors": {
+      "subtitle": "O u r   L e a d e r s h i p",
+      "title": "Board of Directors",
+      "description": "Meet our dedicated team members who guide Abdout with their expertise and commitment to excellence.",
+      "members": [
+        { "name": "Mazin Abdout", "position": "CEO" },
+        { "name": "Sami Dirar", "position": "COO" },
+        { "name": "William Parker", "position": "CTO" },
+        { "name": "David Mitchell", "position": "CFO" },
+        { "name": "James Wilson", "position": "CMO" },
+        { "name": "Robert Chen", "position": "CPO" },
+        { "name": "Michael Brown", "position": "CLO" },
+        { "name": "Thomas Anderson", "position": "CSO" }
+      ]
+    }
+  },
   "marketing": {
     "hero": {
       "badge": "CUSTOMS CLEARANCE SERVICES",
-      "title": "Precision in Every Shipment",
+      "titleLine1": "Precision in",
+      "titleLine2": "Every Shipment",
       "subtitle": "Streamline your import and export operations with our integrated digital platform, real-time tracking, and expert customs clearance team in Port Sudan.",
       "cta": "Get Started",
-      "trackPlaceholder": "Enter tracking number"
+      "trackPlaceholder": "Enter tracking number",
+      "trackButton": "Track"
     },
     "partners": {
       "title": "Trusted by leading shipping companies"
@@ -260,6 +361,14 @@
           "title": "Team Access Control",
           "description": "Role-based permissions for secure team collaboration and management"
         }
+      },
+      "tags": {
+        "control": "Control",
+        "ops": "Ops",
+        "cost": "Cost",
+        "efficiency": "Efficiency",
+        "speed": "Speed",
+        "accuracy": "Accuracy"
       }
     },
     "insights": {
@@ -316,27 +425,28 @@
       }
     },
     "faq": {
-      "title": "Questions and Answers",
+      "title": "Frequently Asked Questions",
+      "subtitle": "Your guide to our services and plans.",
       "items": {
         "q1": {
-          "question": "What is Abdout's primary service area?",
-          "answer": "Abdout specializes in customs clearance services at Port Sudan, handling both import and export operations for businesses across Sudan."
+          "question": "What's included in the One Project plan?",
+          "answer": "The One Project plan includes complete custom development for a single automation solution, including consultation, development, testing, and deployment."
         },
         "q2": {
-          "question": "How long does the customs clearance process take?",
-          "answer": "Most shipments are cleared within 48 hours. Complex cases may take longer depending on documentation requirements and customs inspections."
+          "question": "How does the hourly billing work for Strategic Partner?",
+          "answer": "With Strategic Partner, you get access to our development team at $10/hour. Perfect for ongoing projects, maintenance, or when you need flexible development resources."
         },
         "q3": {
-          "question": "What documents are required for customs clearance?",
-          "answer": "Typically required documents include Bill of Lading, Commercial Invoice, Packing List, Certificate of Origin, and Insurance Certificate. Additional documents may be needed based on the goods type."
+          "question": "Can I switch between plans?",
+          "answer": "Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle."
         },
         "q4": {
-          "question": "Can I track my shipment in real-time?",
-          "answer": "Yes, our platform provides real-time tracking with automated notifications at every milestone, from arrival at port to final delivery."
+          "question": "Do you offer enterprise solutions?",
+          "answer": "Absolutely! For enterprise needs, we offer custom solutions with dedicated teams, SLAs, and specialized support. Contact us for a tailored quote."
         },
         "q5": {
-          "question": "What payment methods do you accept?",
-          "answer": "We accept payments in Sudanese Pounds (SDG), US Dollars (USD), and Saudi Riyals (SAR). Invoices can be generated in your preferred currency."
+          "question": "What support is included?",
+          "answer": "All plans include email support. Higher tiers get priority response times and dedicated account managers for seamless communication."
         }
       }
     },
@@ -345,7 +455,15 @@
       "quickLinks": "Quick Links",
       "services": "Services",
       "contact": "Contact",
+      "company": "Company",
+      "support": "Support",
       "copyright": "All rights reserved.",
+      "newsletter": {
+        "title": "Subscribe to Newsletter",
+        "description": "Stay updated with the latest news and offers.",
+        "placeholder": "Enter your email",
+        "button": "Subscribe"
+      },
       "links": {
         "home": "Home",
         "features": "Features",
@@ -355,7 +473,13 @@
         "import": "Import Clearance",
         "export": "Export Clearance",
         "warehouse": "Warehousing",
-        "transport": "Transportation"
+        "transport": "Transportation",
+        "about": "About",
+        "careers": "Careers",
+        "blog": "Blog",
+        "helpCenter": "Help Center",
+        "documentation": "Documentation",
+        "status": "Status"
       },
       "contactInfo": {
         "address": "Port Sudan, Red Sea State, Sudan",
@@ -363,5 +487,103 @@
         "email": "info@mazin.sd"
       }
     }
+  },
+  "chatbot": {
+    "openChat": "Open chat",
+    "closeChat": "Close chat",
+    "placeholder": "Type your message...",
+    "welcomeMessage": "Hello! How can I help you with your shipping needs?",
+    "noMessages": "No messages yet. Start a conversation!",
+    "errorMessage": "Sorry, something went wrong. Please try again.",
+    "typing": "Typing...",
+    "send": "Send",
+    "sendMessage": "Send message",
+    "voiceInput": "Voice input",
+    "retry": "Retry",
+    "chooseQuestion": "Choose a question or type your message",
+    "speechNotSupported": "Speech recognition is not supported in your browser.",
+    "speechError": "Speech recognition error. Please try again.",
+    "quickActions": {
+      "track": "Track",
+      "trackQuestion": "Where is my shipment?",
+      "rates": "Rates",
+      "ratesQuestion": "What are your shipping rates?",
+      "delivery": "Delivery",
+      "deliveryQuestion": "How long does delivery take?",
+      "contact": "Contact",
+      "contactQuestion": "How can I contact you?"
+    }
+  },
+  "table": {
+    "of": "of",
+    "rowsSelected": "row(s) selected"
+  },
+  "tracking": {
+    "title": "Track Shipment",
+    "publicTitle": "Track Your Shipment",
+    "enterNumber": "Enter tracking number",
+    "trackButton": "Track",
+    "notFound": "Shipment not found",
+    "invalidNumber": "Invalid tracking number",
+    "currentStatus": "Current Status",
+    "estimatedDelivery": "Estimated Delivery",
+    "lastUpdated": "Last Updated",
+    "progress": "Progress",
+    "shipmentInfo": "Shipment Information",
+    "trackingNumber": "Tracking Number",
+    "vesselName": "Vessel Name",
+    "containerNumber": "Container Number",
+    "consignee": "Consignee",
+    "copyLink": "Copy Tracking Link",
+    "linkCopied": "Link copied!",
+    "stages": {
+      "PRE_ARRIVAL_DOCS": "Pre-Arrival Documents",
+      "VESSEL_ARRIVAL": "Vessel Arrival",
+      "CUSTOMS_DECLARATION": "Customs Declaration",
+      "CUSTOMS_PAYMENT": "Customs Payment",
+      "INSPECTION": "Inspection",
+      "PORT_FEES": "Port Fees",
+      "QUALITY_STANDARDS": "Quality & Standards",
+      "RELEASE": "Release",
+      "LOADING": "Loading",
+      "IN_TRANSIT": "In Transit",
+      "DELIVERED": "Delivered"
+    },
+    "stageDescriptions": {
+      "PRE_ARRIVAL_DOCS": "Documentation review before vessel arrives",
+      "VESSEL_ARRIVAL": "Vessel has arrived at Port Sudan",
+      "CUSTOMS_DECLARATION": "Customs declaration submitted and processing",
+      "CUSTOMS_PAYMENT": "Customs duties and taxes being paid",
+      "INSPECTION": "Cargo inspection in progress",
+      "PORT_FEES": "Port handling fees being processed",
+      "QUALITY_STANDARDS": "Quality and standards verification",
+      "RELEASE": "Cargo release order issued",
+      "LOADING": "Cargo being loaded for transport",
+      "IN_TRANSIT": "Shipment en route to destination",
+      "DELIVERED": "Shipment delivered successfully"
+    },
+    "statuses": {
+      "PENDING": "Pending",
+      "IN_PROGRESS": "In Progress",
+      "COMPLETED": "Completed",
+      "SKIPPED": "Skipped"
+    },
+    "actions": {
+      "advanceStage": "Advance to Next Stage",
+      "updateStage": "Update Stage",
+      "updateEta": "Update ETA",
+      "addNote": "Add Note",
+      "markComplete": "Mark Complete",
+      "skip": "Skip Stage",
+      "initializeTracking": "Initialize Tracking",
+      "generateNumber": "Generate Tracking Number"
+    },
+    "eta": "ETA",
+    "completedAt": "Completed",
+    "startedAt": "Started",
+    "notes": "Notes",
+    "noNotes": "No notes added",
+    "addNotes": "Add notes for this stage...",
+    "stageOf": "Stage {current} of {total}"
   }
 }

@@ -57,17 +57,17 @@ export function Solutions({ dictionary }: SolutionsProps) {
   ]
 
   return (
-    <section id="solutions" className="py-20 bg-gray-50">
+    <section id="solutions" className="py-20 bg-muted">
       <div style={{ paddingInline: 'var(--container-padding)' }}>
         {/* Section Header */}
         <div className="mb-12">
-          <span className="inline-block text-xs font-semibold tracking-wider text-[#0ea5e9] uppercase mb-3">
+          <span className="inline-block text-xs font-semibold tracking-wider text-primary uppercase mb-3">
             {solutions.badge}
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             {solutions.title}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl">
+          <p className="text-lg text-muted-foreground max-w-2xl">
             {solutions.subtitle}
           </p>
         </div>
@@ -78,31 +78,51 @@ export function Solutions({ dictionary }: SolutionsProps) {
             {items.map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
+                className="bg-card rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className={`w-12 h-12 rounded-lg ${item.bgColor} flex items-center justify-center mb-4`}>
                   <item.icon className={`w-6 h-6 ${item.color}`} />
                 </div>
 
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-lg font-semibold text-card-foreground mb-2">
                   {item.title}
                 </h3>
 
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   {item.description}
                 </p>
               </div>
             ))}
           </div>
 
-          {/* Image */}
-          <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop"
-              alt="Cargo airplane"
-              fill
-              className="object-cover"
-            />
+          {/* Images Grid */}
+          <div className="grid grid-rows-2 gap-4 h-[400px] lg:h-[500px]">
+            <div className="relative rounded-2xl overflow-hidden">
+              <Image
+                src="/plane.jpg"
+                alt="Cargo airplane loading"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="relative rounded-2xl overflow-hidden">
+                <Image
+                  src="/ship.jpg"
+                  alt="Cargo ship"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative rounded-2xl overflow-hidden">
+                <Image
+                  src="/contianer.jpg"
+                  alt="Shipping containers"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

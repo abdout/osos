@@ -29,7 +29,7 @@ export function Partners() {
                 alt={sponsor.name}
                 width={sponsor.width}
                 height={sponsor.height}
-                className={`${sponsor.smaller ? 'h-10 sm:h-11 lg:h-12' : 'h-11 sm:h-12 lg:h-14'} w-auto object-contain opacity-50 hover:opacity-100 transition-opacity duration-300 ${sponsor.grayscale ? 'grayscale' : ''}`}
+                className={`${sponsor.smaller ? 'h-10 sm:h-11 lg:h-12' : 'h-11 sm:h-12 lg:h-14'} w-auto object-contain transition-all duration-300 grayscale opacity-50 hover:opacity-80 dark:invert dark:opacity-70 dark:hover:opacity-100`}
                 unoptimized
               />
             </div>

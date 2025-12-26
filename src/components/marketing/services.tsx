@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { Dictionary } from '@/components/internationalization/types'
+import { motion } from 'motion/react'
 
 interface ServicesProps {
   dictionary: Dictionary
@@ -16,38 +17,55 @@ export function Services({ dictionary }: ServicesProps) {
       tags: [services.items.sea.tag1, services.items.sea.tag2],
       title: services.items.sea.title,
       description: services.items.sea.description,
-      image: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=2070&auto=format&fit=crop',
+      image: '/ship.jpg',
     },
     {
       type: services.items.air.type,
       tags: [services.items.air.tag1, services.items.air.tag2],
       title: services.items.air.title,
       description: services.items.air.description,
-      image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop',
+      image: '/plane.jpg',
     },
     {
       type: services.items.ground.type,
       tags: [services.items.ground.tag1, services.items.ground.tag2],
       title: services.items.ground.title,
       description: services.items.ground.description,
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop',
+      image: '/contianer.jpg',
     },
   ]
 
+  const titleWords = services.title.split(' ')
+
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-background">
       <div style={{ paddingInline: 'var(--container-padding)' }}>
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-14">
           <div className="lg:max-w-2xl">
-            <span className="inline-block text-xs font-medium tracking-wider text-gray-500 uppercase mb-4 px-4 py-1.5 border border-gray-200 rounded-full">
+            <span className="inline-block text-xs font-medium tracking-wider text-muted-foreground uppercase mb-4 px-4 py-1.5 border border-border rounded-full">
               {services.badge}
             </span>
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-[1.15]">
-              {services.title}
+            <h2 className="text-4xl sm:text-5xl font-bold text-foreground leading-[1.15]">
+              {titleWords.map((word, index) => (
+                <motion.span
+                  key={index}
+                  className="inline-block me-[0.25em]"
+                  initial={{ opacity: 0, y: 50, rotateX: -90 }}
+                  whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.6,
+                    delay: 0.1 + index * 0.08,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                >
+                  {word}
+                </motion.span>
+              ))}
             </h2>
           </div>
-          <p className="text-gray-500 lg:max-w-sm lg:text-right lg:pt-12">
+          <p className="text-muted-foreground lg:max-w-sm lg:text-right lg:pt-12">
             {services.subtitle}
           </p>
         </div>
@@ -55,7 +73,17 @@ export function Services({ dictionary }: ServicesProps) {
         {/* Cards Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {items.map((item, index) => (
-            <div key={index} className="group">
+            <motion.div
+              key={index}
+              className="group"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{
+                duration: 0.6,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            >
               {/* Image with Tags */}
               <div className="relative aspect-[3/2] rounded-3xl overflow-hidden mb-5">
                 <Image
@@ -79,13 +107,13 @@ export function Services({ dictionary }: ServicesProps) {
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <h3 className="text-xl font-semibold text-foreground mb-2">
                 {item.title}
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 {item.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

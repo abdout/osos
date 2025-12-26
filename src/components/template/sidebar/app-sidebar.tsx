@@ -1,130 +1,102 @@
 "use client"
 
+import * as React from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import {
-  LayoutDashboard,
-  Ship,
-  FileText,
-  Receipt,
-  Settings,
-  Users,
-} from "lucide-react"
+  IconDashboard,
+  IconFileDescription,
+  IconHelp,
+  IconInnerShadowTop,
+  IconReceipt,
+  IconSettings,
+  IconShip,
+} from "@tabler/icons-react"
+
+import { NavMain } from "./nav-main"
+import { NavSecondary } from "./nav-secondary"
+import { NavUser } from "./nav-user"
 import {
   Sidebar,
   SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
+  SidebarFooter,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarHeader,
-  SidebarFooter,
 } from "@/components/ui/sidebar"
 import type { Dictionary, Locale } from "@/components/internationalization"
 
-interface AppSidebarProps {
+interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
   dictionary: Dictionary
   locale: Locale
+  user: {
+    id: string
+    email: string
+    name: string | null
+    role: string
+  }
 }
 
-export function AppSidebar({ dictionary, locale }: AppSidebarProps) {
-  const pathname = usePathname()
-
-  const mainNav = [
+export function AppSidebar({ dictionary, locale, user, ...props }: AppSidebarProps) {
+  const navMainItems = [
     {
       title: dictionary.navigation.dashboard,
-      href: `/${locale}/dashboard`,
-      icon: LayoutDashboard,
+      url: `/${locale}/dashboard`,
+      icon: IconDashboard,
     },
     {
       title: dictionary.navigation.shipments,
-      href: `/${locale}/shipments`,
-      icon: Ship,
+      url: `/${locale}/shipments`,
+      icon: IconShip,
     },
     {
       title: dictionary.navigation.customs,
-      href: `/${locale}/customs`,
-      icon: FileText,
+      url: `/${locale}/customs`,
+      icon: IconFileDescription,
     },
     {
       title: dictionary.navigation.invoices,
-      href: `/${locale}/invoices`,
-      icon: Receipt,
+      url: `/${locale}/invoices`,
+      icon: IconReceipt,
     },
   ]
 
-  const settingsNav = [
-    {
-      title: dictionary.navigation.users,
-      href: `/${locale}/settings/users`,
-      icon: Users,
-    },
+  const navSecondaryItems = [
     {
       title: dictionary.navigation.settings,
-      href: `/${locale}/settings`,
-      icon: Settings,
+      url: `/${locale}/settings`,
+      icon: IconSettings,
+    },
+    {
+      title: dictionary.navigation.help || "Help",
+      url: "#",
+      icon: IconHelp,
     },
   ]
 
   return (
-    <Sidebar>
-      <SidebarHeader className="p-4">
-        <Link href={`/${locale}/dashboard`} className="flex items-center gap-2">
-          <Ship className="h-6 w-6" />
-          <span className="font-bold text-lg">{dictionary.common.appName}</span>
-        </Link>
+    <Sidebar collapsible="offcanvas" {...props}>
+      <SidebarHeader>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton
+              asChild
+              className="data-[slot=sidebar-menu-button]:!p-1.5"
+            >
+              <Link href={`/${locale}/dashboard`}>
+                <IconInnerShadowTop className="!size-5" />
+                <span className="text-base font-semibold">{dictionary.common.appName}</span>
+              </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
       </SidebarHeader>
-
       <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Main</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {mainNav.map((item) => (
-                <SidebarMenuItem key={item.href}>
-                  <SidebarMenuButton
-                    asChild
-                    isActive={pathname.startsWith(item.href)}
-                  >
-                    <Link href={item.href}>
-                      <item.icon className="h-4 w-4" />
-                      <span>{item.title}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-
-        <SidebarGroup>
-          <SidebarGroupLabel>Settings</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              {settingsNav.map((item) => (
-                <SidebarMenuItem key={item.href}>
-                  <SidebarMenuButton
-                    asChild
-                    isActive={pathname.startsWith(item.href)}
-                  >
-                    <Link href={item.href}>
-                      <item.icon className="h-4 w-4" />
-                      <span>{item.title}</span>
-                    </Link>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
+        <NavMain items={navMainItems} locale={locale} dictionary={dictionary} />
+        <NavSecondary items={navSecondaryItems} className="mt-auto" />
       </SidebarContent>
-
-      <SidebarFooter className="p-4">
-        <p className="text-xs text-muted-foreground">
-          Port Sudan Logistics
-        </p>
+      <SidebarFooter>
+        <NavUser user={user} dictionary={dictionary} locale={locale} />
       </SidebarFooter>
     </Sidebar>
   )

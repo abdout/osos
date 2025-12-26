@@ -27,12 +27,10 @@ export function MainNav({ items, children, dictionary }: MainNavProps) {
 
   const localizedItems: MainNavItem[] = React.useMemo(
     () => [
-      { title: t.home, href: `/${locale}` },
-      { title: t.features, href: `/${locale}#features` },
-      { title: t.tracking, href: `/${locale}#tracking` },
-      { title: t.solutions, href: `/${locale}#solutions` },
-      { title: t.pricing, href: `/${locale}#pricing` },
-      { title: t.contact, href: `/${locale}#contact` },
+      { title: t.about, href: `/${locale}#about` },
+      { title: t.services, href: `/${locale}#services` },
+      { title: t.blog, href: `/${locale}/blog` },
+      { title: t.platform, href: `/${locale}/dashboard` },
     ],
     [t, locale]
   )
@@ -56,8 +54,8 @@ export function MainNav({ items, children, dictionary }: MainNavProps) {
   return (
     <>
       {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center w-full">
-        {/* Logo - Left */}
+      <div className="hidden md:flex items-center gap-10">
+        {/* Logo */}
         <Link href={`/${locale}`} className="flex items-center gap-2">
           <Image
             src="/logo.png"
@@ -66,21 +64,21 @@ export function MainNav({ items, children, dictionary }: MainNavProps) {
             height={32}
             className="w-8 h-8"
           />
-          <span className="font-bold text-xl text-[#0f172a]">
+          <span className="font-bold text-xl text-foreground">
             {dictionary.common.appName}
           </span>
         </Link>
-        {/* Nav Links - Center */}
-        <nav className="flex-1 flex justify-center gap-8">
+        {/* Nav Links - Beside Logo */}
+        <nav className="flex items-center gap-8">
           {localizedItems?.map((item, index) => (
             <Link
               key={index}
               href={item.href}
               className={cn(
-                "flex items-center text-sm font-medium transition-colors hover:text-gray-900",
+                "flex items-center text-base font-medium transition-colors hover:text-foreground",
                 item.href.includes(`/${segment}`)
-                  ? "text-gray-900"
-                  : "text-gray-600"
+                  ? "text-foreground"
+                  : "text-muted-foreground"
               )}
             >
               {item.title}
@@ -92,13 +90,13 @@ export function MainNav({ items, children, dictionary }: MainNavProps) {
       {/* Mobile Navigation */}
       <div className="flex items-center md:hidden pt-1">
         <button
-          className="flex items-center justify-center h-11 w-11 rounded-full hover:bg-gray-100 transition-colors"
+          className="flex items-center justify-center h-11 w-11 rounded-full hover:bg-muted transition-colors"
           onClick={() => setShowMobileMenu(!showMobileMenu)}
         >
           {showMobileMenu ? (
-            <X className="h-7 w-7 text-gray-900" strokeWidth={1.5} />
+            <X className="h-7 w-7 text-foreground" strokeWidth={1.5} />
           ) : (
-            <Menu className="h-7 w-7 text-gray-900" strokeWidth={1.5} />
+            <Menu className="h-7 w-7 text-foreground" strokeWidth={1.5} />
           )}
         </button>
       </div>

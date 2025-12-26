@@ -7,5 +7,5 @@ interface SiteHeaderProps {
 }
 
 export default function SiteHeader({ dictionary }: SiteHeaderProps) {
-  return <SiteHeaderClient isAuthenticated={false} dictionary={dictionary} />
+  return <SiteHeaderClient dictionary={dictionary} />
 }

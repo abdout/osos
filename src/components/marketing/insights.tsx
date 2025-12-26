@@ -32,23 +32,23 @@ export function Insights({ dictionary, lang }: InsightsProps) {
   ]
 
   return (
-    <section className="py-16 lg:py-24 bg-white">
+    <section className="py-16 lg:py-24 bg-background">
       <div style={{ paddingInline: 'var(--container-padding)' }}>
         {/* Section Header */}
         <div className="mb-12">
           {/* Badge */}
-          <span className="inline-block text-sm font-medium text-gray-900 border border-gray-300 rounded-full px-4 py-1 mb-6">
+          <span className="inline-block text-sm font-medium text-foreground border border-border rounded-full px-4 py-1 mb-6">
             {insights.badge}
           </span>
 
           {/* Title Row with See More Button */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-gray-900 leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-foreground leading-tight">
               {insights.title}
             </h2>
             <Link
               href={`/${lang}/blog`}
-              className="inline-flex items-center gap-1.5 bg-[#1a365d] text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-[#152a4a] transition-colors w-fit shrink-0"
+              className="inline-flex items-center gap-1.5 bg-primary text-primary-foreground text-sm font-medium px-5 py-2.5 rounded-full hover:bg-primary/90 transition-colors w-fit shrink-0"
             >
               {insights.viewAll}
               <ChevronRight className="w-4 h-4" />
@@ -61,7 +61,7 @@ export function Insights({ dictionary, lang }: InsightsProps) {
           {articles.map((article, index) => (
             <article key={index} className="group cursor-pointer">
               {/* Card Container */}
-              <div className="rounded-md overflow-hidden border border-gray-200">
+              <div className="rounded-md overflow-hidden border border-border">
                 {/* Image Container */}
                 <div className="relative aspect-[4/3]">
                   <Image
@@ -72,21 +72,21 @@ export function Insights({ dictionary, lang }: InsightsProps) {
                   />
                   {/* Date Badge */}
                   <div className="absolute top-4 end-4">
-                    <span className="inline-block bg-white text-gray-900 text-sm font-medium px-4 py-1.5 rounded-full border border-gray-300">
+                    <span className="px-4 py-2 bg-black/25 backdrop-blur-md border border-white/60 rounded-full text-sm font-medium text-white">
                       {article.date}
                     </span>
                   </div>
                 </div>
 
                 {/* Content - with border connecting to image */}
-                <div className="p-5 space-y-3 bg-white">
+                <div className="p-5 space-y-3 bg-card">
                   {/* Category Badge */}
-                  <span className="inline-block text-sm text-gray-600 border border-gray-300 rounded-full px-4 py-1">
+                  <span className="inline-block text-sm text-muted-foreground border border-border rounded-full px-4 py-1">
                     {article.category}
                   </span>
 
                   {/* Description */}
-                  <p className="text-gray-800 text-base leading-relaxed">
+                  <p className="text-foreground text-base leading-relaxed">
                     {article.description}
                   </p>
                 </div>

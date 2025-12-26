@@ -1,17 +1,21 @@
 'use client'
 
-import { useState } from 'react'
-import { ChevronDown } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
 import { Dictionary } from '@/components/internationalization/types'
 
 interface FaqProps {
   dictionary: Dictionary
+  lang?: string
 }
 
-export function Faq({ dictionary }: FaqProps) {
+export function Faq({ dictionary, lang }: FaqProps) {
   const { faq } = dictionary.marketing
-  const [openIndex, setOpenIndex] = useState<number | null>(0)
+  const isRTL = lang === 'ar'
 
   const items = [
     faq.items.q1,
@@ -22,47 +26,34 @@ export function Faq({ dictionary }: FaqProps) {
   ]
 
   return (
-    <section id="faq" className="py-20 bg-white">
-      <div className="max-w-3xl mx-auto" style={{ paddingInline: 'var(--container-padding)' }}>
-        {/* Section Header */}
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-12">
-          {faq.title}
-        </h2>
+    <section id="faq" className="py-16 md:py-32" dir={isRTL ? 'rtl' : 'ltr'}>
+      <div style={{ paddingInline: 'var(--container-padding)' }}>
+        <div className="grid gap-y-12 lg:grid-cols-[1fr_2fr] lg:gap-x-12">
+          {/* Left side - Title */}
+          <div className="text-center lg:text-start">
+            <h2 className="mb-4 text-4xl font-extrabold whitespace-pre-line md:text-5xl text-foreground">
+              {faq.title}
+            </h2>
+            <p className="text-muted-foreground">
+              {faq.subtitle}
+            </p>
+          </div>
 
-        {/* FAQ Items */}
-        <div className="space-y-4">
-          {items.map((item, index) => (
-            <div
-              key={index}
-              className="border border-gray-200 rounded-xl overflow-hidden"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-5 text-start bg-white hover:bg-gray-50 transition-colors"
-              >
-                <span className="font-medium text-gray-900 pe-4">
-                  {item.question}
-                </span>
-                <ChevronDown
-                  className={cn(
-                    "w-5 h-5 text-gray-500 flex-shrink-0 transition-transform duration-200",
-                    openIndex === index && "rotate-180"
-                  )}
-                />
-              </button>
-
-              <div
-                className={cn(
-                  "overflow-hidden transition-all duration-200",
-                  openIndex === index ? "max-h-96" : "max-h-0"
-                )}
-              >
-                <p className="px-5 pb-5 text-gray-600">
-                  {item.answer}
-                </p>
-              </div>
-            </div>
-          ))}
+          {/* Right side - Accordion */}
+          <div className="divide-y divide-dashed sm:mx-auto sm:max-w-xl lg:mx-0 lg:ms-auto">
+            <Accordion type="single" collapsible defaultValue="item-0">
+              {items.map((item, index) => (
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger className="text-start">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-start">
+                    <p>{item.answer}</p>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
       </div>
     </section>

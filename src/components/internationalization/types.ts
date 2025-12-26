@@ -27,15 +27,15 @@ export interface Dictionary {
     success: string
     error: string
     warning: string
+    view: string
+    select: string
+    createdAt: string
   }
   header: {
-    home: string
-    features: string
-    tracking: string
-    solutions: string
-    pricing: string
-    contact: string
-    faq: string
+    services: string
+    blog: string
+    about: string
+    platform: string
     signUp: string
     login: string
   }
@@ -47,16 +47,63 @@ export interface Dictionary {
     settings: string
     users: string
     logout: string
+    help: string
   }
   auth: {
     login: string
     logout: string
     email: string
     password: string
+    name: string
     forgotPassword: string
     loginButton: string
     invalidCredentials: string
     welcomeBack: string
+    loginDescription: string
+    signUp: string
+    createAccount: string
+    signUpDescription: string
+    dontHaveAccount: string
+    alreadyHaveAccount: string
+    orContinueWith: string
+    confirm: string
+    twoFactorCode: string
+    twoFactorDescription: string
+    resetPassword: string
+    resetDescription: string
+    newPassword: string
+    newPasswordDescription: string
+    confirmPassword: string
+    sendResetLink: string
+    backToLogin: string
+    confirmEmail: string
+    confirmEmailDescription: string
+    emailVerified: string
+    verifyingEmail: string
+    enterEmail: string
+    enterPassword: string
+    enterName: string
+    providers: {
+      google: string
+      facebook: string
+    }
+    errors: {
+      emailInUseProvider: string
+      somethingWrong: string
+      emailNotVerified: string
+      invalidCode: string
+      expiredCode: string
+      userNotFound: string
+      invalidToken: string
+      expiredToken: string
+      passwordRequired: string
+    }
+    success: {
+      emailSent: string
+      passwordReset: string
+      accountCreated: string
+      confirmationSent: string
+    }
   }
   dashboard: {
     title: string
@@ -69,6 +116,8 @@ export interface Dictionary {
     newShipment: string
     newDeclaration: string
     newInvoice: string
+    trendingUp: string
+    trendingDown: string
   }
   shipments: {
     title: string
@@ -138,6 +187,7 @@ export interface Dictionary {
     newInvoice: string
     editInvoice: string
     invoiceDetails: string
+    details: string
     invoiceNumber: string
     subtotal: string
     tax: string
@@ -148,6 +198,7 @@ export interface Dictionary {
     addItem: string
     itemDescription: string
     unitPrice: string
+    notes: string
     downloadPdf: string
     markAsPaid: string
     markAsSent: string
@@ -195,13 +246,29 @@ export interface Dictionary {
     invalidNumber: string
     positiveNumber: string
   }
+  about: {
+    sections: {
+      who: { subtitle: string; title: string; description: string }
+      why: { subtitle: string; title: string; description: string }
+      mission: { subtitle: string; title: string; description: string }
+    }
+    goals: Array<{ title: string; description: string }>
+    boardOfDirectors: {
+      subtitle: string
+      title: string
+      description: string
+      members: Array<{ name: string; position: string }>
+    }
+  }
   marketing: {
     hero: {
       badge: string
-      title: string
+      titleLine1: string
+      titleLine2: string
       subtitle: string
       cta: string
       trackPlaceholder: string
+      trackButton: string
     }
     partners: {
       title: string
@@ -234,6 +301,14 @@ export interface Dictionary {
         invoicing: { title: string; description: string }
         access: { title: string; description: string }
       }
+      tags: {
+        control: string
+        ops: string
+        cost: string
+        efficiency: string
+        speed: string
+        accuracy: string
+      }
     }
     insights: {
       badge: string
@@ -257,6 +332,7 @@ export interface Dictionary {
     }
     faq: {
       title: string
+      subtitle: string
       items: {
         q1: { question: string; answer: string }
         q2: { question: string; answer: string }
@@ -270,7 +346,15 @@ export interface Dictionary {
       quickLinks: string
       services: string
       contact: string
+      company: string
+      support: string
       copyright: string
+      newsletter: {
+        title: string
+        description: string
+        placeholder: string
+        button: string
+      }
       links: {
         home: string
         features: string
@@ -281,6 +365,12 @@ export interface Dictionary {
         export: string
         warehouse: string
         transport: string
+        about: string
+        careers: string
+        blog: string
+        helpCenter: string
+        documentation: string
+        status: string
       }
       contactInfo: {
         address: string
@@ -288,5 +378,103 @@ export interface Dictionary {
         email: string
       }
     }
+  }
+  chatbot: {
+    openChat: string
+    closeChat: string
+    placeholder: string
+    welcomeMessage: string
+    noMessages: string
+    errorMessage: string
+    typing: string
+    send: string
+    sendMessage: string
+    voiceInput: string
+    retry: string
+    chooseQuestion: string
+    speechNotSupported: string
+    speechError: string
+    quickActions: {
+      track: string
+      trackQuestion: string
+      rates: string
+      ratesQuestion: string
+      delivery: string
+      deliveryQuestion: string
+      contact: string
+      contactQuestion: string
+    }
+  }
+  table: {
+    of: string
+    rowsSelected: string
+  }
+  tracking: {
+    title: string
+    publicTitle: string
+    enterNumber: string
+    trackButton: string
+    notFound: string
+    invalidNumber: string
+    currentStatus: string
+    estimatedDelivery: string
+    lastUpdated: string
+    progress: string
+    shipmentInfo: string
+    trackingNumber: string
+    vesselName: string
+    containerNumber: string
+    consignee: string
+    copyLink: string
+    linkCopied: string
+    stages: {
+      PRE_ARRIVAL_DOCS: string
+      VESSEL_ARRIVAL: string
+      CUSTOMS_DECLARATION: string
+      CUSTOMS_PAYMENT: string
+      INSPECTION: string
+      PORT_FEES: string
+      QUALITY_STANDARDS: string
+      RELEASE: string
+      LOADING: string
+      IN_TRANSIT: string
+      DELIVERED: string
+    }
+    stageDescriptions: {
+      PRE_ARRIVAL_DOCS: string
+      VESSEL_ARRIVAL: string
+      CUSTOMS_DECLARATION: string
+      CUSTOMS_PAYMENT: string
+      INSPECTION: string
+      PORT_FEES: string
+      QUALITY_STANDARDS: string
+      RELEASE: string
+      LOADING: string
+      IN_TRANSIT: string
+      DELIVERED: string
+    }
+    statuses: {
+      PENDING: string
+      IN_PROGRESS: string
+      COMPLETED: string
+      SKIPPED: string
+    }
+    actions: {
+      advanceStage: string
+      updateStage: string
+      updateEta: string
+      addNote: string
+      markComplete: string
+      skip: string
+      initializeTracking: string
+      generateNumber: string
+    }
+    eta: string
+    completedAt: string
+    startedAt: string
+    notes: string
+    noNotes: string
+    addNotes: string
+    stageOf: string
   }
 }
