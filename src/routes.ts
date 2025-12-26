@@ -14,15 +14,13 @@ export const publicRoutes = [
   "/about",
   "/services",
   "/contact",
-  // Internationalized routes
-  "/en",
-  "/en/about",
-  "/en/services",
-  "/en/contact",
-  "/ar",
-  "/ar/about",
-  "/ar/services",
-  "/ar/contact",
+  // Platform pages (public)
+  "/dashboard",
+  "/shipments",
+  "/customs",
+  "/invoices",
+  "/invoices/new",
+  "/settings",
 ]
 
 /**
@@ -30,8 +28,9 @@ export const publicRoutes = [
  * Routes starting with these prefixes are publicly accessible.
  */
 export const publicRoutePrefixes = [
-  "/en/track/",
-  "/ar/track/",
+  "/track/",
+  "/shipments/",
+  "/invoices/",
 ]
 
 /**
@@ -46,17 +45,6 @@ export const authRoutes = [
   "/error",
   "/reset",
   "/new-password",
-  // Internationalized auth routes
-  "/en/login",
-  "/en/join",
-  "/en/error",
-  "/en/reset",
-  "/en/new-password",
-  "/ar/login",
-  "/ar/join",
-  "/ar/error",
-  "/ar/reset",
-  "/ar/new-password",
 ]
 
 /**
