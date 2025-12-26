@@ -265,6 +265,9 @@ export interface Dictionary {
       badge: string
       titleLine1: string
       titleLine2: string
+      titleMobileLine1: string
+      titleMobileLine2: string
+      titleMobileLine3: string
       subtitle: string
       cta: string
       trackPlaceholder: string
@@ -332,6 +335,7 @@ export interface Dictionary {
     }
     faq: {
       title: string
+      titleMobile: string
       subtitle: string
       items: {
         q1: { question: string; answer: string }

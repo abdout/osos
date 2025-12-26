@@ -32,9 +32,10 @@ export function Faq({ dictionary, lang }: FaqProps) {
           {/* Left side - Title */}
           <div className="text-center lg:text-start">
             <h2 className="mb-4 text-4xl font-extrabold whitespace-pre-line md:text-5xl text-foreground">
-              {faq.title}
+              <span className="md:hidden">{faq.titleMobile}</span>
+              <span className="hidden md:inline">{faq.title}</span>
             </h2>
-            <p className="text-muted-foreground">
+            <p className="text-sm md:text-base text-muted-foreground">
               {faq.subtitle}
             </p>
           </div>

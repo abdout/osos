@@ -52,14 +52,19 @@ export function Hero({ dictionary }: HeroProps) {
             {hero.badge}
           </span>
 
-          {/* Title */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.1] mb-6">
-            <span className="block">{hero.titleLine1}</span>
-            <span className="block whitespace-nowrap">{hero.titleLine2}</span>
+          {/* Title - 3 lines on mobile, 2 lines on desktop */}
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.1] mb-4 sm:mb-6">
+            {/* Mobile: 3 lines */}
+            <span className="block sm:hidden">{hero.titleMobileLine1}</span>
+            <span className="block sm:hidden">{hero.titleMobileLine2}</span>
+            <span className="block sm:hidden">{hero.titleMobileLine3}</span>
+            {/* Desktop: 2 lines */}
+            <span className="hidden sm:block">{hero.titleLine1}</span>
+            <span className="hidden sm:block whitespace-nowrap">{hero.titleLine2}</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 leading-relaxed">
             {hero.subtitle}
           </p>
 

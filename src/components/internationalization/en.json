@@ -296,6 +296,9 @@
       "badge": "CUSTOMS CLEARANCE SERVICES",
       "titleLine1": "Precision in",
       "titleLine2": "Every Shipment",
+      "titleMobileLine1": "Precision",
+      "titleMobileLine2": "in Every",
+      "titleMobileLine3": "Shipment",
       "subtitle": "Streamline your import and export operations with our integrated digital platform, real-time tracking, and expert customs clearance team in Port Sudan.",
       "cta": "Get Started",
       "trackPlaceholder": "Enter tracking number",
@@ -426,6 +429,7 @@
     },
     "faq": {
       "title": "Frequently Asked Questions",
+      "titleMobile": "FAQ",
       "subtitle": "Your guide to our services and plans.",
       "items": {
         "q1": {
