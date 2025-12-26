@@ -26,6 +26,15 @@ export const publicRoutes = [
 ]
 
 /**
+ * Public route prefixes.
+ * Routes starting with these prefixes are publicly accessible.
+ */
+export const publicRoutePrefixes = [
+  "/en/track/",
+  "/ar/track/",
+]
+
+/**
  * Authentication routes.
  * These routes are used for authentication flows.
  * Logged in users will be redirected away from these routes.

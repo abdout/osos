@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from 'next/server'
 import { i18n, type Locale } from '@/components/internationalization/config'
-import { apiAuthPrefix, authRoutes, publicRoutes, DEFAULT_LOGIN_REDIRECT } from '@/routes'
+import { apiAuthPrefix, authRoutes, publicRoutes, publicRoutePrefixes, DEFAULT_LOGIN_REDIRECT } from '@/routes'
 
 function getLocale(request: NextRequest): string {
   const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value
@@ -36,7 +36,8 @@ export async function middleware(request: NextRequest) {
   const isApiAuthRoute = pathname.startsWith(apiAuthPrefix)
 
   // Check route types (without locale prefix)
-  const isPublicRoute = publicRoutes.includes(pathnameWithoutLocale)
+  const isPublicRoute = publicRoutes.includes(pathnameWithoutLocale) ||
+    publicRoutePrefixes.some(prefix => pathname.startsWith(prefix))
   const isAuthRoute = authRoutes.includes(pathnameWithoutLocale)
 
   // Allow API auth routes
