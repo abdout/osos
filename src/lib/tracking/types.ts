@@ -5,7 +5,7 @@ export type { TrackingStage, TrackingStageType, TrackingStageStatus }
 export interface StageConfig {
   order: number
   estimatedHours: number
-  color: "gray" | "blue" | "green" | "yellow" | "red"
+  color: "gray" | "red" | "green" | "yellow"
 }
 
 export interface TrackingStageWithMeta extends TrackingStage {

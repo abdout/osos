@@ -16,8 +16,8 @@ export function Solutions({ dictionary }: SolutionsProps) {
       icon: MapPin,
       title: solutions.items.realTime.title,
       description: solutions.items.realTime.description,
-      color: 'text-blue-500',
-      bgColor: 'bg-blue-500/10',
+      color: 'text-red-500',
+      bgColor: 'bg-red-500/10',
     },
     {
       icon: BarChart3,

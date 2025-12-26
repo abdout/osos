@@ -32,17 +32,17 @@ export const STAGE_CONFIG: Record<TrackingStageType, StageConfig> = {
   PRE_ARRIVAL_DOCS: {
     order: 1,
     estimatedHours: 24,
-    color: "blue",
+    color: "red",
   },
   VESSEL_ARRIVAL: {
     order: 2,
     estimatedHours: 0, // Depends on vessel schedule
-    color: "blue",
+    color: "red",
   },
   CUSTOMS_DECLARATION: {
     order: 3,
     estimatedHours: 24,
-    color: "blue",
+    color: "red",
   },
   CUSTOMS_PAYMENT: {
     order: 4,
@@ -62,7 +62,7 @@ export const STAGE_CONFIG: Record<TrackingStageType, StageConfig> = {
   QUALITY_STANDARDS: {
     order: 7,
     estimatedHours: 24,
-    color: "blue",
+    color: "red",
   },
   RELEASE: {
     order: 8,
@@ -77,7 +77,7 @@ export const STAGE_CONFIG: Record<TrackingStageType, StageConfig> = {
   IN_TRANSIT: {
     order: 10,
     estimatedHours: 24,
-    color: "blue",
+    color: "red",
   },
   DELIVERED: {
     order: 11,
@@ -108,10 +108,10 @@ export const STATUS_STYLES = {
     badge: "bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300",
   },
   IN_PROGRESS: {
-    bg: "bg-blue-100 dark:bg-blue-900/30",
-    text: "text-blue-600 dark:text-blue-400",
-    border: "border-blue-200 dark:border-blue-800",
-    badge: "bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300",
+    bg: "bg-red-100 dark:bg-red-900/30",
+    text: "text-red-600 dark:text-red-400",
+    border: "border-red-200 dark:border-red-800",
+    badge: "bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300",
   },
   COMPLETED: {
     bg: "bg-green-100 dark:bg-green-900/30",

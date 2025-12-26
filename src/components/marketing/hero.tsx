@@ -81,7 +81,7 @@ export function Hero({ dictionary }: HeroProps) {
             <Button
               size="sm"
               onClick={handleTrack}
-              className="absolute end-1.5 bg-blue-500 hover:bg-blue-600 text-white font-medium h-8 sm:h-9 px-3 sm:px-5 gap-1 sm:gap-1.5 rounded-full text-xs sm:text-sm"
+              className="absolute end-1.5 bg-red-500 hover:bg-red-600 text-white font-medium h-8 sm:h-9 px-3 sm:px-5 gap-1 sm:gap-1.5 rounded-full text-xs sm:text-sm"
             >
               <Search className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               <span className="hidden sm:inline">{hero.trackButton}</span>

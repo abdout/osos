@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site"
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} - Port Sudan Logistics`,
+    default: `${siteConfig.name} | أسس السلامة - Fire Fighting & Fire Alarm Systems`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     locale: "ar_SD",
     alternateLocale: "en_US",
     url: siteConfig.url,
-    title: siteConfig.name,
+    title: `${siteConfig.name} | أسس السلامة`,
     description: siteConfig.description,
     siteName: siteConfig.name,
     images: [
@@ -24,16 +24,16 @@ export const metadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: siteConfig.name,
+        alt: `${siteConfig.name} - Fire Fighting & Fire Alarm Systems`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.name,
+    title: `${siteConfig.name} | أسس السلامة`,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@abdoutgroup",
+    creator: "@aborawy",
   },
   robots: {
     index: true,

@@ -49,7 +49,7 @@ const statusConfig: Record<
   { icon: IconComponent; className: string }
 > = {
   DRAFT: { icon: IconEdit, className: "bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300" },
-  SENT: { icon: IconSend, className: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300" },
+  SENT: { icon: IconSend, className: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300" },
   PAID: { icon: IconCircleCheckFilled, className: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300" },
   OVERDUE: { icon: IconClock, className: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300" },
   CANCELLED: { icon: IconFileOff, className: "bg-gray-100 text-gray-500 dark:bg-gray-800 dark:text-gray-500" },

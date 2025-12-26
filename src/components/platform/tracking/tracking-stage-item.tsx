@@ -46,14 +46,14 @@ export function TrackingStageItem({
           styles.bg,
           styles.text,
           styles.border,
-          isActive && "animate-pulse ring-4 ring-blue-200 dark:ring-blue-900"
+          isActive && "animate-pulse ring-4 ring-red-200 dark:ring-red-900"
         )}
       >
         <Icon className="h-5 w-5" />
       </div>
 
       {/* Content card */}
-      <Card className={cn("flex-1", isActive && "border-blue-300 dark:border-blue-700")}>
+      <Card className={cn("flex-1", isActive && "border-red-300 dark:border-red-700")}>
         <CardContent className="p-4">
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div>
