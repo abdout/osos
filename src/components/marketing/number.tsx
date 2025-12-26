@@ -87,7 +87,7 @@ export function NumberSection() {
   return (
     <div className="relative">
       {/* Background Image Section with Mask */}
-      <div className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] bg-[url('/number.webp')] bg-cover bg-center bg-scroll md:bg-fixed">
+      <div className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] bg-[url('https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center bg-scroll md:bg-fixed">
         <div className="absolute inset-0 bg-black/50">
           <div className="h-full flex flex-col justify-end pb-10 sm:pb-12 md:pb-16" style={{ paddingInline: 'var(--container-padding)' }}>
             <span className="text-2xl sm:text-3xl md:text-4xl font-black text-background mb-2">Company</span>

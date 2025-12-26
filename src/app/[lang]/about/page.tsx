@@ -39,8 +39,8 @@ export default async function AboutPage({
                 </div>
                 <div className="mt-8">
                   <Image
-                    src="/abdout.png"
-                    alt="Port Sudan shipping"
+                    src="https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=2070&auto=format&fit=crop"
+                    alt="Fire safety professionals"
                     width={500}
                     height={250}
                     className="w-full h-[600px] rounded-lg object-cover"
@@ -63,8 +63,8 @@ export default async function AboutPage({
                 </div>
                 <div className="mt-8">
                   <Image
-                    src="/contianer.jpg"
-                    alt="Logistics teamwork"
+                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop"
+                    alt="Fire alarm systems"
                     width={500}
                     height={250}
                     className="w-full h-[600px] rounded-lg object-cover"

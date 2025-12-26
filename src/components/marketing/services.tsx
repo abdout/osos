@@ -17,21 +17,21 @@ export function Services({ dictionary }: ServicesProps) {
       tags: [services.items.sea.tag1, services.items.sea.tag2],
       title: services.items.sea.title,
       description: services.items.sea.description,
-      image: '/ship.jpg',
+      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop',
     },
     {
       type: services.items.air.type,
       tags: [services.items.air.tag1, services.items.air.tag2],
       title: services.items.air.title,
       description: services.items.air.description,
-      image: '/plane.jpg',
+      image: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?q=80&w=2070&auto=format&fit=crop',
     },
     {
       type: services.items.ground.type,
       tags: [services.items.ground.tag1, services.items.ground.tag2],
       title: services.items.ground.title,
       description: services.items.ground.description,
-      image: '/contianer.jpg',
+      image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop',
     },
   ]
 

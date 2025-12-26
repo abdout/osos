@@ -99,8 +99,8 @@ export function Solutions({ dictionary }: SolutionsProps) {
           <div className="grid grid-rows-2 gap-4 h-[400px] lg:h-[500px]">
             <div className="relative rounded-2xl overflow-hidden">
               <Image
-                src="/plane.jpg"
-                alt="Cargo airplane loading"
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop"
+                alt="Fire alarm control panel"
                 fill
                 className="object-cover"
               />
@@ -108,16 +108,16 @@ export function Solutions({ dictionary }: SolutionsProps) {
             <div className="grid grid-cols-2 gap-4">
               <div className="relative rounded-2xl overflow-hidden">
                 <Image
-                  src="/ship.jpg"
-                  alt="Cargo ship"
+                  src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?q=80&w=2070&auto=format&fit=crop"
+                  alt="Fire extinguisher"
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="relative rounded-2xl overflow-hidden">
                 <Image
-                  src="/contianer.jpg"
-                  alt="Shipping containers"
+                  src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop"
+                  alt="Fire sprinkler system"
                   fill
                   className="object-cover"
                 />

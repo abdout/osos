@@ -18,7 +18,7 @@ export function AllInOne({ dictionary }: AllInOneProps) {
     {
       id: 0,
       bgColor: 'bg-[#D97757]',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop',
       icon: '/settings.png',
       tags: [allInOne.tags.control, allInOne.tags.ops],
       description: allInOne.features.documentation.description,
@@ -26,7 +26,7 @@ export function AllInOne({ dictionary }: AllInOneProps) {
     {
       id: 1,
       bgColor: 'bg-[#CBCADB]',
-      image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop',
       icon: '/money.png',
       tags: [allInOne.tags.cost, allInOne.tags.efficiency],
       description: allInOne.features.invoicing.description,
@@ -34,7 +34,7 @@ export function AllInOne({ dictionary }: AllInOneProps) {
     {
       id: 2,
       bgColor: 'bg-[#BCD1CA]',
-      image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=2070&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=2070&auto=format&fit=crop',
       icon: '/approval.png',
       tags: [allInOne.tags.speed, allInOne.tags.accuracy],
       description: allInOne.features.access.description,
